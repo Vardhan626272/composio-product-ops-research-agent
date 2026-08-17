@@ -22,7 +22,7 @@ FIELDS_TO_VERIFY = [
 
 
 def build_verification_sample(
-    sample_size: int = 2,
+    sample_size: int = 3,
 ) -> list[dict]:
     """
     Select a small sample of successful research results for manual review.
@@ -107,7 +107,7 @@ def save_sample(records: list[dict]) -> None:
 
 
 def main() -> None:
-    sample = build_verification_sample(sample_size=2)
+    sample = build_verification_sample(sample_size=3)
 
     save_sample(sample)
 
