@@ -1,0 +1,114 @@
+{
+  "verification_method": "Manual review of selected agent outputs against first-party documentation.",
+  "sample_size": 4,
+  "fully_human_verified_apps": 3,
+  "apps_with_recorded_corrections": 3,
+  "total_recorded_field_corrections": 10,
+  "accuracy_claim": "No overall percentage accuracy is claimed because the current sample does not verify every field for every sampled app.",
+  "verification_results": [
+    {
+      "id": "2",
+      "app": "HubSpot",
+      "human_verified": true,
+      "agent_confidence": "low",
+      "corrected_field_count": 4,
+      "corrected_fields": [
+        {
+          "field": "auth_methods",
+          "agent_value": [],
+          "human_value": [
+            "OAuth2",
+            "private app access token",
+            "Service Key"
+          ]
+        },
+        {
+          "field": "mcp_available",
+          "agent_value": false,
+          "human_value": true
+        },
+        {
+          "field": "buildability",
+          "agent_value": "uncertain",
+          "human_value": "buildable-with-setup"
+        },
+        {
+          "field": "main_blocker",
+          "agent_value": "unclear API authentication",
+          "human_value": "Developer Tools access is required to create Service Keys."
+        }
+      ],
+      "human_notes": "Manual verification found that the first-pass agent missed documented authentication options and MCP support. HubSpot documents OAuth, private-app access tokens, and the newer Service Key model. Service Key creation requires Developer Tools access, but the available evidence does not establish that the credential path is universally admin-only, so credential_path remains unknown rather than being overstated. HubSpot also documents a self-service MCP Auth Apps flow for its Remote MCP Server."
+    },
+    {
+      "id": "1",
+      "app": "Salesforce",
+      "human_verified": false,
+      "agent_confidence": "high",
+      "corrected_field_count": 0,
+      "corrected_fields": [],
+      "human_notes": ""
+    },
+    {
+      "id": "44",
+      "app": "Salesforce Commerce Cloud",
+      "human_verified": true,
+      "agent_confidence": "high",
+      "corrected_field_count": 3,
+      "corrected_fields": [
+        {
+          "field": "auth_methods",
+          "agent_value": [
+            "OAuth 2.1",
+            "Account Manager token",
+            "Bearer token"
+          ],
+          "human_value": [
+            "OAuth 2.1",
+            "Account Manager API client credentials",
+            "Bearer access token"
+          ]
+        },
+        {
+          "field": "credential_path",
+          "agent_value": "unknown",
+          "human_value": "admin-approval-required"
+        },
+        {
+          "field": "main_blocker",
+          "agent_value": null,
+          "human_value": "Administrator access is required to create the SCAPI Admin API client."
+        }
+      ],
+      "human_notes": "Manual verification against current Salesforce Commerce Cloud SCAPI documentation. The B2C Commerce API is explicitly documented as RESTful. Shopper APIs use SLAS with OAuth 2.1, while Admin APIs use Account Manager. Salesforce states that the user or someone with administrator access must create the API client for SCAPI Admin APIs. The getting-started documentation also explicitly documents the B2C DX MCP Server in Developer Preview."
+    },
+    {
+      "id": "84",
+      "app": "Paygent Connect",
+      "human_verified": true,
+      "agent_confidence": "low",
+      "corrected_field_count": 3,
+      "corrected_fields": [
+        {
+          "field": "auth_methods",
+          "agent_value": [],
+          "human_value": [
+            "API key",
+            "OAuth2"
+          ]
+        },
+        {
+          "field": "buildability",
+          "agent_value": "uncertain",
+          "human_value": "buildable-with-setup"
+        },
+        {
+          "field": "main_blocker",
+          "agent_value": "unclear API authentication",
+          "human_value": "Access to the Merchant or Partner Portal is required to create API security keys."
+        }
+      ],
+      "human_notes": "The assignment identifies Paygent Connect as NMI-powered, so NMI's official developer documentation was used as the technical evidence source. NMI documents API/security-key authentication and OAuth 2.0 for its v5 signup API. Security keys are created from the Merchant Portal or Partner Portal. The documentation also exposes a hosted MCP server for its developer documentation. The evidence does not establish whether initial Merchant/Partner Portal access is self-serve, paid-plan-only, or approval-gated, so credential_path remains unknown."
+    }
+  ]
+}

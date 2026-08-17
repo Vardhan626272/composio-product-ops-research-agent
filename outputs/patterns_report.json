@@ -1,0 +1,235 @@
+{
+  "total_apps": 100,
+  "headline_metrics": {
+    "mcp_available": 41,
+    "mcp_percentage": 41.0,
+    "human_verification_flagged": 89,
+    "human_verification_percentage": 89.0
+  },
+  "authentication": {
+    "OAuth2": 12,
+    "private app access token": 1,
+    "Service Key": 1,
+    "API token": 4,
+    "OAuth 2.0": 13,
+    "Bearer token": 9,
+    "Username & password flow": 1,
+    "App authentication flow": 1,
+    "API keys": 2,
+    "OAuth2.0": 1,
+    "API Keys": 1,
+    "Authorization Token": 1,
+    "OAuth": 8,
+    "Access Token": 1,
+    "API tokens": 1,
+    "API key": 10,
+    "OAuth 2": 1,
+    "HTTP Basic and Digest Authentication": 1,
+    "Bot token": 1,
+    "OAuth2 bearer token": 1,
+    "HTTP Basic authentication": 1,
+    "Other documented mechanisms": 1,
+    "OAuth access tokens": 1,
+    "Basic Auth": 1,
+    "JWT authentication": 1,
+    "Developer token": 1,
+    "Service account": 1,
+    "User authentication workflow": 1,
+    "Private Integration Token": 1,
+    "HTTP Basic Authentication": 1,
+    "Bearer Authentication": 1,
+    "Private key authentication": 1,
+    "Public key authentication": 1,
+    "Product limited tokens": 1,
+    "Session tokens": 1,
+    "Token exchange": 1,
+    "Authorization code grant": 1,
+    "Client credentials grant": 1,
+    "Access tokens": 2,
+    "Stable tokens": 1,
+    "BigCommerce-generated JWTs": 1,
+    "User-generated JWTs": 1,
+    "BigCommerce-encrypted payload JWTs": 1,
+    "Same-origin CORS authentication": 1,
+    "OAuth 2.1": 1,
+    "Account Manager API client credentials": 1,
+    "Bearer access token": 1,
+    "OAuth 1.0a": 1,
+    "Tokens": 1,
+    "Login credentials": 1,
+    "Adobe Identity Management Service (IMS) Access Token": 1,
+    "OAuth 2 protocols": 1,
+    "Access token": 1,
+    "Login with Amazon (LWA)": 1,
+    "Basic authentication": 1,
+    "URL query parameter": 1,
+    "PAYMENT-SIGNATURE header": 1,
+    "skyfire-pay-id header": 1,
+    "GitHub App installation access tokens": 1,
+    "GitHub App user access tokens": 1,
+    "Fine-grained personal access tokens": 1,
+    "Personal access token": 2,
+    "Global API key": 1,
+    "Static API token": 1,
+    "Personal API keys": 1,
+    "OAuth 2.0 (3LO)": 1,
+    "Basic auth for REST APIs": 1,
+    "Service Account": 1,
+    "OpenID Connect": 2,
+    "Personal V2 API tokens": 1,
+    "shortLivedToken": 1,
+    "Client credentials": 1,
+    "Browser-based sign-in": 1,
+    "Google": 1,
+    "Microsoft": 1,
+    "SSO": 1
+  },
+  "credential_path": {
+    "self-serve-free": 39,
+    "unknown": 54,
+    "self-serve-trial": 3,
+    "partner-gated": 1,
+    "admin-approval-required": 3
+  },
+  "api_type": {
+    "REST": 70,
+    "Unknown": 9,
+    "GraphQL": 4,
+    "Other": 5,
+    "REST+GraphQL": 7,
+    "CLI": 3,
+    "No-public-API-found": 2
+  },
+  "api_breadth": {
+    "broad": 63,
+    "unknown": 27,
+    "moderate": 7,
+    "narrow": 3
+  },
+  "buildability": {
+    "buildable-with-setup": 28,
+    "agent-ready": 25,
+    "uncertain": 45,
+    "blocked": 2
+  },
+  "quality_status": {
+    "pass": 11,
+    "review": 89
+  },
+  "confidence": {
+    "high": 39,
+    "low": 35,
+    "medium": 26
+  },
+  "pages_found": {
+    "4": 1,
+    "1": 53,
+    "2": 45,
+    "3": 1
+  },
+  "blockers": {
+    "Developer Tools access is required to create Service Keys.": 1,
+    "unclear API authentication": 39,
+    "unclear API authentication and API documentation details": 1,
+    "partner approval / partner-gated onboarding required for OAuth client ID and secret generation": 1,
+    "unclear API authentication and lack of detailed developer documentation in the provided sources": 1,
+    "admin approval": 2,
+    "Administrator access is required to create the SCAPI Admin API client.": 1,
+    "no public API": 3,
+    "Access to the Merchant or Partner Portal is required to create API security keys.": 1
+  },
+  "categories": {
+    "CRM and Sales": 10,
+    "Support and Helpdesk": 10,
+    "Communications and Messaging": 10,
+    "Marketing, Ads, Email and Social": 10,
+    "Ecommerce": 10,
+    "Data, SEO and Scraping": 10,
+    "Developer, Infra and Data platforms": 10,
+    "Productivity and Project Management": 10,
+    "Finance and Fintech": 10,
+    "AI, Research and Media-native": 10
+  },
+  "category_summary": {
+    "CRM and Sales": {
+      "apps": 10,
+      "agent_ready": 2,
+      "buildable_with_setup": 4,
+      "blocked": 0,
+      "uncertain": 4,
+      "mcp": 5
+    },
+    "Support and Helpdesk": {
+      "apps": 10,
+      "agent_ready": 2,
+      "buildable_with_setup": 1,
+      "blocked": 0,
+      "uncertain": 7,
+      "mcp": 3
+    },
+    "Communications and Messaging": {
+      "apps": 10,
+      "agent_ready": 3,
+      "buildable_with_setup": 5,
+      "blocked": 0,
+      "uncertain": 2,
+      "mcp": 2
+    },
+    "Marketing, Ads, Email and Social": {
+      "apps": 10,
+      "agent_ready": 1,
+      "buildable_with_setup": 4,
+      "blocked": 0,
+      "uncertain": 5,
+      "mcp": 1
+    },
+    "Ecommerce": {
+      "apps": 10,
+      "agent_ready": 0,
+      "buildable_with_setup": 5,
+      "blocked": 0,
+      "uncertain": 5,
+      "mcp": 2
+    },
+    "Data, SEO and Scraping": {
+      "apps": 10,
+      "agent_ready": 4,
+      "buildable_with_setup": 3,
+      "blocked": 0,
+      "uncertain": 3,
+      "mcp": 6
+    },
+    "Developer, Infra and Data platforms": {
+      "apps": 10,
+      "agent_ready": 3,
+      "buildable_with_setup": 2,
+      "blocked": 0,
+      "uncertain": 5,
+      "mcp": 5
+    },
+    "Productivity and Project Management": {
+      "apps": 10,
+      "agent_ready": 5,
+      "buildable_with_setup": 1,
+      "blocked": 0,
+      "uncertain": 4,
+      "mcp": 6
+    },
+    "Finance and Fintech": {
+      "apps": 10,
+      "agent_ready": 3,
+      "buildable_with_setup": 2,
+      "blocked": 1,
+      "uncertain": 4,
+      "mcp": 5
+    },
+    "AI, Research and Media-native": {
+      "apps": 10,
+      "agent_ready": 2,
+      "buildable_with_setup": 1,
+      "blocked": 1,
+      "uncertain": 6,
+      "mcp": 6
+    }
+  }
+}

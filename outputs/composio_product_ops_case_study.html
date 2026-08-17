@@ -1,0 +1,2509 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<title>
+Composio Product Ops Intern — 100-App Research Agent
+</title>
+
+<style>
+
+:root {
+  --bg: #0b1020;
+  --panel: #121a2e;
+  --panel2: #18223b;
+  --text: #edf3ff;
+  --muted: #aab7d0;
+  --accent: #6ea8fe;
+  --accent2: #7ee787;
+  --warn: #ffcc66;
+  --danger: #ff7b72;
+  --line: #2b3959;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(
+      180deg,
+      #09101f,
+      #0b1020 40%,
+      #0d1326
+    );
+  color: var(--text);
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: #a8c7ff;
+}
+
+.container {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 38px 24px 80px;
+}
+
+.hero {
+  background:
+    linear-gradient(
+      135deg,
+      #172544,
+      #10192e
+    );
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 34px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  color: var(--accent2);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.08;
+  margin: 10px 0 14px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+
+h3 {
+  font-size: 17px;
+  margin: 0 0 10px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 1050px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.action {
+  display: inline-block;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 9px 14px;
+  border-radius: 9px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.big {
+  font-size: 31px;
+  font-weight: 800;
+}
+
+.small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+section {
+  background: rgba(18, 26, 46, .92);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 26px;
+  margin-top: 22px;
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.insight {
+  background: var(--panel2);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 50px;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.metric-label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.bar {
+  height: 10px;
+  background: #263452;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent),
+      #9b8cff
+    );
+  border-radius: 999px;
+}
+
+.metric-value {
+  text-align: right;
+  font-weight: 700;
+}
+
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.step {
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 15px;
+  font-size: 13px;
+}
+
+.step strong {
+  display: block;
+  color: var(--accent2);
+  margin-bottom: 6px;
+}
+
+.callout {
+  border-left: 4px solid var(--warn);
+  padding: 14px 18px;
+  background: #211c0e;
+  border-radius: 8px;
+  color: #f4e6b5;
+  margin-top: 18px;
+}
+
+.success {
+  border-left-color: var(--accent2);
+  background: #102219;
+  color: #ccefd7;
+}
+
+.danger {
+  border-left-color: var(--danger);
+  background: #261415;
+  color: #ffd2d0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  min-width: 1050px;
+}
+
+th,
+td {
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  padding: 9px 8px;
+  vertical-align: top;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #111a2f;
+  color: var(--muted);
+  font-weight: 700;
+  z-index: 1;
+}
+
+tr:hover td {
+  background: rgba(110, 168, 254, .04);
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.yes {
+  background: #123a25;
+  color: #9df0b5;
+}
+
+.no {
+  background: #321a1a;
+  color: #ffaaa5;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 28px;
+}
+
+@media (max-width: 1000px) {
+
+  .grid,
+  .insight-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .workflow {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .grid,
+  .insight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .metric-row {
+    grid-template-columns: 130px 1fr 40px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="hero">
+
+    <div class="eyebrow">
+      Composio • Product Ops Intern
+    </div>
+
+    <h1>
+      Researching 100 app integrations with an evidence-first agent
+    </h1>
+
+    <div class="lead">
+      I built a reproducible pipeline that retrieves first-party developer
+      documentation, extracts evidence, classifies every app against one
+      schema, quality-checks the output, and routes weak findings to human
+      verification.
+    </div>
+
+    <div class="actions">
+      <a
+        class="action"
+        href="REPLACE_WITH_GITHUB_REPO_URL"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Source repository
+      </a>
+
+      <a
+        class="action"
+        href="REPLACE_WITH_LIVE_CASE_STUDY_URL"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Live case study
+      </a>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="big">100</div>
+        <div class="small">apps researched</div>
+      </div>
+
+      <div class="card">
+        <div class="big">41</div>
+        <div class="small">
+          apps with MCP evidence (41.0%)
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="big">25</div>
+        <div class="small">agent-ready</div>
+      </div>
+
+      <div class="card">
+        <div class="big">
+          28
+        </div>
+        <div class="small">
+          buildable with setup
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <section>
+
+    <h2>
+      Executive summary
+    </h2>
+
+    <div class="insight-grid">
+
+      <div class="insight">
+
+        <h3>
+          REST dominates
+        </h3>
+
+        <div class="big">
+          70
+        </div>
+
+        <div class="small">
+          of 100 apps were classified as REST-only.
+        </div>
+
+      </div>
+
+      <div class="insight">
+
+        <h3>
+          Authentication is the biggest evidence gap
+        </h3>
+
+        <div class="big">
+          54
+        </div>
+
+        <div class="small">
+          credential paths remain unknown in the first-pass dataset.
+        </div>
+
+      </div>
+
+      <div class="insight">
+
+        <h3>
+          The pipeline is intentionally conservative
+        </h3>
+
+        <div class="big">
+          89
+        </div>
+
+        <div class="small">
+          apps were flagged for review instead of being treated as
+          confidently solved.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>
+      What I built
+    </h2>
+
+    <div class="workflow">
+
+      <div class="step">
+        <strong>1. Input</strong>
+        100-app CSV containing category and official documentation hints.
+      </div>
+
+      <div class="step">
+        <strong>2. Retrieval</strong>
+        Official URLs first; requests first and Playwright fallback.
+      </div>
+
+      <div class="step">
+        <strong>3. Evidence</strong>
+        HTML cleaned into text with source URLs preserved.
+      </div>
+
+      <div class="step">
+        <strong>4. Agent</strong>
+        Gemini 3.5 Flash-Lite produces schema-constrained JSON.
+      </div>
+
+      <div class="step">
+        <strong>5. Quality gate</strong>
+        Thin or contradictory evidence is flagged automatically.
+      </div>
+
+      <div class="step">
+        <strong>6. Human loop</strong>
+        Selected weak cases are manually checked and corrections are stored.
+      </div>
+
+    </div>
+
+    <div class="callout success">
+
+      Composio SDK connectivity and tool discovery were successfully tested.
+      The Composio Browser Tool itself returned HTTP 403 because execution was
+      disabled by the administrator, so the final web-research path used
+      direct retrieval plus a local Playwright fallback. This limitation is
+      disclosed rather than hidden.
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>
+      Key patterns
+    </h2>
+
+    <h3>
+      Credential path
+    </h3>
+
+    
+    <div class="metric-row">
+      <div class="metric-label">Self-serve free</div>
+      <div class="bar">
+        <div class="bar-fill" style="width:39.0%"></div>
+      </div>
+      <div class="metric-value">39</div>
+    </div>
+    
+
+    
+    <div class="metric-row">
+      <div class="metric-label">Self-serve trial</div>
+      <div class="bar">
+        <div class="bar-fill" style="width:3.0%"></div>
+      </div>
+      <div class="metric-value">3</div>
+    </div>
+    
+
+    
+    <div class="metric-row">
+      <div class="metric-label">Admin approval</div>
+      <div class="bar">
+        <div class="bar-fill" style="width:3.0%"></div>
+      </div>
+      <div class="metric-value">3</div>
+    </div>
+    
+
+    
+    <div class="metric-row">
+      <div class="metric-label">Partner gated</div>
+      <div class="bar">
+        <div class="bar-fill" style="width:1.0%"></div>
+      </div>
+      <div class="metric-value">1</div>
+    </div>
+    
+
+    
+    <div class="metric-row">
+      <div class="metric-label">Unknown</div>
+      <div class="bar">
+        <div class="bar-fill" style="width:54.0%"></div>
+      </div>
+      <div class="metric-value">54</div>
+    </div>
+    
+
+    <h3 style="margin-top:24px;">
+      Buildability
+    </h3>
+
+    
+    <div class="metric-row">
+      <div class="metric-label">Agent-ready</div>
+      <div class="bar">
+        <div class="bar-fill" style="width:25.0%"></div>
+      </div>
+      <div class="metric-value">25</div>
+    </div>
+    
+
+    
+    <div class="metric-row">
+      <div class="metric-label">Buildable with setup</div>
+      <div class="bar">
+        <div class="bar-fill" style="width:28.0%"></div>
+      </div>
+      <div class="metric-value">28</div>
+    </div>
+    
+
+    
+    <div class="metric-row">
+      <div class="metric-label">Blocked</div>
+      <div class="bar">
+        <div class="bar-fill" style="width:2.0%"></div>
+      </div>
+      <div class="metric-value">2</div>
+    </div>
+    
+
+    
+    <div class="metric-row">
+      <div class="metric-label">Uncertain</div>
+      <div class="bar">
+        <div class="bar-fill" style="width:45.0%"></div>
+      </div>
+      <div class="metric-value">45</div>
+    </div>
+    
+
+    <h3 style="margin-top:24px;">
+      Normalized authentication patterns
+    </h3>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Canonical auth bucket</th>
+            <th>Apps</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr><td>Unknown</td><td>39</td></tr><tr><td>API key/token, OAuth</td><td>20</td></tr><tr><td>API key/token</td><td>15</td></tr><tr><td>OAuth</td><td>11</td></tr><tr><td>Basic</td><td>2</td></tr><tr><td>API key/token, Basic, OAuth</td><td>2</td></tr><tr><td>Basic, OAuth</td><td>2</td></tr><tr><td>API key/token, OAuth, Service account</td><td>2</td></tr><tr><td>User/SSO</td><td>2</td></tr><tr><td>Other</td><td>1</td></tr><tr><td>API key/token, JWT</td><td>1</td></tr><tr><td>API key/token, JWT, OAuth</td><td>1</td></tr><tr><td>API key/token, OAuth, User/SSO</td><td>1</td></tr><tr><td>OAuth, User/SSO</td><td>1</td></tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>
+      Human verification: first pass vs. checked result
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="big">
+          3
+        </div>
+        <div class="small">
+          fully human-verified apps
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="big">
+          10
+        </div>
+        <div class="small">
+          recorded field corrections
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="big">
+          11
+        </div>
+        <div class="small">
+          first-pass quality passes
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="big">
+          89
+        </div>
+        <div class="small">
+          first-pass review flags
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout">
+
+      The sample is not presented as a statistically valid 100-app accuracy
+      benchmark. It is a targeted verification loop designed to expose
+      real misses and show how human review changes the output.
+    </div>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>App</th>
+            <th>Agent confidence</th>
+            <th>Corrections</th>
+            <th>What human review found</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          
+        <tr>
+          <td>HubSpot</td>
+          <td>low</td>
+          <td>4</td>
+          <td>Manual verification found that the first-pass agent missed documented authentication options and MCP support. HubSpot documents OAuth, private-app access tokens, and the newer Service Key model. Service Key creation requires Developer Tools access, but the available evidence does not establish that the credential path is universally admin-only, so credential_path remains unknown rather than being overstated. HubSpot also documents a self-service MCP Auth Apps flow for its Remote MCP Server.</td>
+        </tr>
+        
+        <tr>
+          <td>Salesforce Commerce Cloud</td>
+          <td>high</td>
+          <td>3</td>
+          <td>Manual verification against current Salesforce Commerce Cloud SCAPI documentation. The B2C Commerce API is explicitly documented as RESTful. Shopper APIs use SLAS with OAuth 2.1, while Admin APIs use Account Manager. Salesforce states that the user or someone with administrator access must create the API client for SCAPI Admin APIs. The getting-started documentation also explicitly documents the B2C DX MCP Server in Developer Preview.</td>
+        </tr>
+        
+        <tr>
+          <td>Paygent Connect</td>
+          <td>low</td>
+          <td>3</td>
+          <td>The assignment identifies Paygent Connect as NMI-powered, so NMI&#x27;s official developer documentation was used as the technical evidence source. NMI documents API/security-key authentication and OAuth 2.0 for its v5 signup API. Security keys are created from the Merchant Portal or Partner Portal. The documentation also exposes a hosted MCP server for its developer documentation. The evidence does not establish whether initial Merchant/Partner Portal access is self-serve, paid-plan-only, or approval-gated, so credential_path remains unknown.</td>
+        </tr>
+        
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>
+      Top blockers
+    </h2>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Blocker</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+        <tr>
+          <td>Developer Tools access is required to create Service Keys.</td>
+          <td>1</td>
+        </tr>
+        
+        <tr>
+          <td>unclear API authentication</td>
+          <td>39</td>
+        </tr>
+        
+        <tr>
+          <td>unclear API authentication and API documentation details</td>
+          <td>1</td>
+        </tr>
+        
+        <tr>
+          <td>partner approval / partner-gated onboarding required for OAuth client ID and secret generation</td>
+          <td>1</td>
+        </tr>
+        
+        <tr>
+          <td>unclear API authentication and lack of detailed developer documentation in the provided sources</td>
+          <td>1</td>
+        </tr>
+        
+        <tr>
+          <td>admin approval</td>
+          <td>2</td>
+        </tr>
+        
+        <tr>
+          <td>Administrator access is required to create the SCAPI Admin API client.</td>
+          <td>1</td>
+        </tr>
+        
+        <tr>
+          <td>no public API</td>
+          <td>3</td>
+        </tr>
+        
+        <tr>
+          <td>Access to the Merchant or Partner Portal is required to create API security keys.</td>
+          <td>1</td>
+        </tr>
+        
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div class="callout danger">
+
+      The strongest recurring blocker was not a missing API. It was missing
+      evidence about authentication and credential acquisition. That is where
+      a stronger discovery loop would provide the most leverage.
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>
+      Category-level matrix
+    </h2>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Category</th>
+            <th>Apps</th>
+            <th>Agent-ready</th>
+            <th>Setup</th>
+            <th>Blocked</th>
+            <th>Uncertain</th>
+            <th>MCP</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          
+        <tr>
+          <td>CRM and Sales</td>
+          <td>10</td>
+          <td>2</td>
+          <td>4</td>
+          <td>0</td>
+          <td>4</td>
+          <td>5</td>
+        </tr>
+        
+        <tr>
+          <td>Support and Helpdesk</td>
+          <td>10</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0</td>
+          <td>7</td>
+          <td>3</td>
+        </tr>
+        
+        <tr>
+          <td>Communications and Messaging</td>
+          <td>10</td>
+          <td>3</td>
+          <td>5</td>
+          <td>0</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        
+        <tr>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>10</td>
+          <td>1</td>
+          <td>4</td>
+          <td>0</td>
+          <td>5</td>
+          <td>1</td>
+        </tr>
+        
+        <tr>
+          <td>Ecommerce</td>
+          <td>10</td>
+          <td>0</td>
+          <td>5</td>
+          <td>0</td>
+          <td>5</td>
+          <td>2</td>
+        </tr>
+        
+        <tr>
+          <td>Data, SEO and Scraping</td>
+          <td>10</td>
+          <td>4</td>
+          <td>3</td>
+          <td>0</td>
+          <td>3</td>
+          <td>6</td>
+        </tr>
+        
+        <tr>
+          <td>Developer, Infra and Data platforms</td>
+          <td>10</td>
+          <td>3</td>
+          <td>2</td>
+          <td>0</td>
+          <td>5</td>
+          <td>5</td>
+        </tr>
+        
+        <tr>
+          <td>Productivity and Project Management</td>
+          <td>10</td>
+          <td>5</td>
+          <td>1</td>
+          <td>0</td>
+          <td>4</td>
+          <td>6</td>
+        </tr>
+        
+        <tr>
+          <td>Finance and Fintech</td>
+          <td>10</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1</td>
+          <td>4</td>
+          <td>5</td>
+        </tr>
+        
+        <tr>
+          <td>AI, Research and Media-native</td>
+          <td>10</td>
+          <td>2</td>
+          <td>1</td>
+          <td>1</td>
+          <td>6</td>
+          <td>6</td>
+        </tr>
+        
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>
+      Full 100-app research matrix
+    </h2>
+
+    <p class="note">
+      Evidence URLs are clickable. “Unknown” and “Review” are intentional
+      states: the agent did not invent an answer when the retrieved evidence
+      did not support one.
+    </p>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>ID</th>
+            <th>App</th>
+            <th>Category</th>
+            <th>Auth</th>
+            <th>Credential path</th>
+            <th>API</th>
+            <th>MCP</th>
+            <th>Buildability</th>
+            <th>Confidence</th>
+            <th>Quality</th>
+            <th>Evidence</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          
+        <tr>
+          <td>1</td>
+          <td><strong>Salesforce</strong></td>
+          <td>CRM and Sales</td>
+          <td>OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://developer.salesforce.com/" target="_blank" rel="noopener noreferrer">https://developer.salesforce.com/</a><br><a href="https://developer.salesforce.com/docs/platform/connect-rest-api/guide/intro_using_oauth.html" target="_blank" rel="noopener noreferrer">https://developer.salesforce.com/docs/platform/connect-rest-api/guide/intro_using_oauth.html</a><br><a href="https://developer.salesforce.com/docs/platform/connect-rest-api/guide/quickstart.html" target="_blank" rel="noopener noreferrer">https://developer.salesforce.com/docs/platform/connect-rest-api/guide/quickstart.html</a></td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td><strong>HubSpot</strong></td>
+          <td>CRM and Sales</td>
+          <td>API key/token, OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>buildable-with-setup</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://developers.hubspot.com/docs/api-reference/latest/overview" target="_blank" rel="noopener noreferrer">https://developers.hubspot.com/docs/api-reference/latest/overview</a></td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td><strong>Pipedrive</strong></td>
+          <td>CRM and Sales</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developers.pipedrive.com/docs/api/v1" target="_blank" rel="noopener noreferrer">https://developers.pipedrive.com/docs/api/v1</a></td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td><strong>Attio</strong></td>
+          <td>CRM and Sales</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://docs.attio.com/docs/overview" target="_blank" rel="noopener noreferrer">https://docs.attio.com/docs/overview</a><br><a href="https://docs.attio.com/docs/overview" target="_blank" rel="noopener noreferrer">https://docs.attio.com/docs/overview</a></td>
+        </tr>
+        
+        <tr>
+          <td>5</td>
+          <td><strong>Twenty</strong></td>
+          <td>CRM and Sales</td>
+          <td>Unknown</td>
+          <td>self-serve-free</td>
+          <td>Unknown</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://docs.twenty.com/getting-started/introduction" target="_blank" rel="noopener noreferrer">https://docs.twenty.com/getting-started/introduction</a><br><a href="https://github.com/twentyhq/twenty" target="_blank" rel="noopener noreferrer">https://github.com/twentyhq/twenty</a></td>
+        </tr>
+        
+        <tr>
+          <td>6</td>
+          <td><strong>Podio</strong></td>
+          <td>CRM and Sales</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developers.podio.com/" target="_blank" rel="noopener noreferrer">https://developers.podio.com/</a><br><a href="https://developers.podio.com/authentication" target="_blank" rel="noopener noreferrer">https://developers.podio.com/authentication</a></td>
+        </tr>
+        
+        <tr>
+          <td>7</td>
+          <td><strong>Zoho CRM</strong></td>
+          <td>CRM and Sales</td>
+          <td>OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://www.zoho.com/crm/developer/docs/api/v8/" target="_blank" rel="noopener noreferrer">https://www.zoho.com/crm/developer/docs/api/v8/</a><br><a href="https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html" target="_blank" rel="noopener noreferrer">https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html</a></td>
+        </tr>
+        
+        <tr>
+          <td>8</td>
+          <td><strong>Close</strong></td>
+          <td>CRM and Sales</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developer.close.com/" target="_blank" rel="noopener noreferrer">https://developer.close.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>9</td>
+          <td><strong>Copper</strong></td>
+          <td>CRM and Sales</td>
+          <td>OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://developer.copper.com/" target="_blank" rel="noopener noreferrer">https://developer.copper.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>10</td>
+          <td><strong>DealCloud</strong></td>
+          <td>CRM and Sales</td>
+          <td>API key/token</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://api.docs.dealcloud.com/" target="_blank" rel="noopener noreferrer">https://api.docs.dealcloud.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>11</td>
+          <td><strong>Zendesk</strong></td>
+          <td>Support and Helpdesk</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://developer.zendesk.com/api-reference/" target="_blank" rel="noopener noreferrer">https://developer.zendesk.com/api-reference/</a></td>
+        </tr>
+        
+        <tr>
+          <td>12</td>
+          <td><strong>Intercom</strong></td>
+          <td>Support and Helpdesk</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developers.intercom.com/docs" target="_blank" rel="noopener noreferrer">https://developers.intercom.com/docs</a></td>
+        </tr>
+        
+        <tr>
+          <td>13</td>
+          <td><strong>Freshdesk</strong></td>
+          <td>Support and Helpdesk</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://developers.freshdesk.com/api/" target="_blank" rel="noopener noreferrer">https://developers.freshdesk.com/api/</a></td>
+        </tr>
+        
+        <tr>
+          <td>14</td>
+          <td><strong>Front</strong></td>
+          <td>Support and Helpdesk</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://dev.frontapp.com/docs/welcome" target="_blank" rel="noopener noreferrer">https://dev.frontapp.com/docs/welcome</a><br><a href="https://dev.frontapp.com/reference/authentication" target="_blank" rel="noopener noreferrer">https://dev.frontapp.com/reference/authentication</a></td>
+        </tr>
+        
+        <tr>
+          <td>15</td>
+          <td><strong>Pylon</strong></td>
+          <td>Support and Helpdesk</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Unknown</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://docs.usepylon.com/pylon-docs" target="_blank" rel="noopener noreferrer">https://docs.usepylon.com/pylon-docs</a></td>
+        </tr>
+        
+        <tr>
+          <td>16</td>
+          <td><strong>LiveAgent</strong></td>
+          <td>Support and Helpdesk</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Unknown</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://www.liveagent.com/api/" target="_blank" rel="noopener noreferrer">https://www.liveagent.com/api/</a></td>
+        </tr>
+        
+        <tr>
+          <td>17</td>
+          <td><strong>Plain</strong></td>
+          <td>Support and Helpdesk</td>
+          <td>API key/token</td>
+          <td>unknown</td>
+          <td>GraphQL</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://www.plain.com/docs/graphql/introduction" target="_blank" rel="noopener noreferrer">https://www.plain.com/docs/graphql/introduction</a><br><a href="https://www.plain.com/docs/graphql/introduction" target="_blank" rel="noopener noreferrer">https://www.plain.com/docs/graphql/introduction</a></td>
+        </tr>
+        
+        <tr>
+          <td>18</td>
+          <td><strong>Help Scout</strong></td>
+          <td>Support and Helpdesk</td>
+          <td>OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://developer.helpscout.com/" target="_blank" rel="noopener noreferrer">https://developer.helpscout.com/</a><br><a href="https://developer.helpscout.com/mailbox-api/" target="_blank" rel="noopener noreferrer">https://developer.helpscout.com/mailbox-api/</a></td>
+        </tr>
+        
+        <tr>
+          <td>19</td>
+          <td><strong>Gorgias</strong></td>
+          <td>Support and Helpdesk</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://developers.gorgias.com/" target="_blank" rel="noopener noreferrer">https://developers.gorgias.com/</a><br><a href="https://developers.gorgias.com/reference/introduction" target="_blank" rel="noopener noreferrer">https://developers.gorgias.com/reference/introduction</a></td>
+        </tr>
+        
+        <tr>
+          <td>20</td>
+          <td><strong>Gladly</strong></td>
+          <td>Support and Helpdesk</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://developer.gladly.com/" target="_blank" rel="noopener noreferrer">https://developer.gladly.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>21</td>
+          <td><strong>Slack</strong></td>
+          <td>Communications and Messaging</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://docs.slack.dev/apis/web-api/" target="_blank" rel="noopener noreferrer">https://docs.slack.dev/apis/web-api/</a><br><a href="https://docs.slack.dev/authentication/" target="_blank" rel="noopener noreferrer">https://docs.slack.dev/authentication/</a></td>
+        </tr>
+        
+        <tr>
+          <td>22</td>
+          <td><strong>Twilio</strong></td>
+          <td>Communications and Messaging</td>
+          <td>Basic</td>
+          <td>self-serve-trial</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://www.twilio.com/docs/usage/api" target="_blank" rel="noopener noreferrer">https://www.twilio.com/docs/usage/api</a><br><a href="https://www.twilio.com/docs/usage/security" target="_blank" rel="noopener noreferrer">https://www.twilio.com/docs/usage/security</a></td>
+        </tr>
+        
+        <tr>
+          <td>23</td>
+          <td><strong>Zoho Cliq</strong></td>
+          <td>Communications and Messaging</td>
+          <td>OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://www.zoho.com/cliq/help/restapi/v2/introduction/#overview" target="_blank" rel="noopener noreferrer">https://www.zoho.com/cliq/help/restapi/v2/introduction/#overview</a></td>
+        </tr>
+        
+        <tr>
+          <td>24</td>
+          <td><strong>Lark (Larksuite)</strong></td>
+          <td>Communications and Messaging</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://open.larksuite.com/document/home/index" target="_blank" rel="noopener noreferrer">https://open.larksuite.com/document/home/index</a><br><a href="https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication/" target="_blank" rel="noopener noreferrer">https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication/</a></td>
+        </tr>
+        
+        <tr>
+          <td>25</td>
+          <td><strong>Pumble</strong></td>
+          <td>Communications and Messaging</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Unknown</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://pumble.com/" target="_blank" rel="noopener noreferrer">https://pumble.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>26</td>
+          <td><strong>Discord</strong></td>
+          <td>Communications and Messaging</td>
+          <td>API key/token, Basic, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://docs.discord.com/developers/reference" target="_blank" rel="noopener noreferrer">https://docs.discord.com/developers/reference</a><br><a href="https://docs.discord.com/developers/topics/oauth2" target="_blank" rel="noopener noreferrer">https://docs.discord.com/developers/topics/oauth2</a></td>
+        </tr>
+        
+        <tr>
+          <td>27</td>
+          <td><strong>Telegram</strong></td>
+          <td>Communications and Messaging</td>
+          <td>Other</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://core.telegram.org/bots/api" target="_blank" rel="noopener noreferrer">https://core.telegram.org/bots/api</a></td>
+        </tr>
+        
+        <tr>
+          <td>28</td>
+          <td><strong>WhatsApp Business Platform</strong></td>
+          <td>Communications and Messaging</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/overview" target="_blank" rel="noopener noreferrer">https://developers.facebook.com/documentation/business-messaging/whatsapp/overview</a><br><a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform" target="_blank" rel="noopener noreferrer">https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform</a></td>
+        </tr>
+        
+        <tr>
+          <td>29</td>
+          <td><strong>Aircall</strong></td>
+          <td>Communications and Messaging</td>
+          <td>Basic, OAuth</td>
+          <td>partner-gated</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://developer.aircall.io/" target="_blank" rel="noopener noreferrer">https://developer.aircall.io/</a><br><a href="https://developers.aircall.io/api-references" target="_blank" rel="noopener noreferrer">https://developers.aircall.io/api-references</a></td>
+        </tr>
+        
+        <tr>
+          <td>30</td>
+          <td><strong>Vonage</strong></td>
+          <td>Communications and Messaging</td>
+          <td>API key/token, JWT</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developer.vonage.com/en/home" target="_blank" rel="noopener noreferrer">https://developer.vonage.com/en/home</a><br><a href="https://developer.vonage.com/en/api" target="_blank" rel="noopener noreferrer">https://developer.vonage.com/en/api</a></td>
+        </tr>
+        
+        <tr>
+          <td>31</td>
+          <td><strong>Google Ads</strong></td>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>API key/token, OAuth, Service account</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://developers.google.com/google-ads/api/docs/get-started/introduction" target="_blank" rel="noopener noreferrer">https://developers.google.com/google-ads/api/docs/get-started/introduction</a><br><a href="https://developers.google.com/google-ads/api/docs/oauth/overview" target="_blank" rel="noopener noreferrer">https://developers.google.com/google-ads/api/docs/oauth/overview</a></td>
+        </tr>
+        
+        <tr>
+          <td>32</td>
+          <td><strong>Meta Ads</strong></td>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>GraphQL</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://developers.facebook.com/documentation/ads-commerce/marketing-api" target="_blank" rel="noopener noreferrer">https://developers.facebook.com/documentation/ads-commerce/marketing-api</a><br><a href="https://developers.facebook.com/documentation/ads-commerce/marketing-api" target="_blank" rel="noopener noreferrer">https://developers.facebook.com/documentation/ads-commerce/marketing-api</a></td>
+        </tr>
+        
+        <tr>
+          <td>33</td>
+          <td><strong>LinkedIn Ads</strong></td>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-08" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-08</a><br><a href="https://learn.microsoft.com/en-us/linkedin/shared/authentication/" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/linkedin/shared/authentication/</a></td>
+        </tr>
+        
+        <tr>
+          <td>34</td>
+          <td><strong>GoHighLevel</strong></td>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>API key/token, OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://marketplace.gohighlevel.com/docs/" target="_blank" rel="noopener noreferrer">https://marketplace.gohighlevel.com/docs/</a></td>
+        </tr>
+        
+        <tr>
+          <td>35</td>
+          <td><strong>Mailchimp</strong></td>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>API key/token, Basic, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://mailchimp.com/developer/" target="_blank" rel="noopener noreferrer">https://mailchimp.com/developer/</a><br><a href="https://mailchimp.com/developer/marketing/docs/fundamentals/" target="_blank" rel="noopener noreferrer">https://mailchimp.com/developer/marketing/docs/fundamentals/</a></td>
+        </tr>
+        
+        <tr>
+          <td>36</td>
+          <td><strong>Klaviyo</strong></td>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developers.klaviyo.com/en/docs/getting_started" target="_blank" rel="noopener noreferrer">https://developers.klaviyo.com/en/docs/getting_started</a><br><a href="https://developers.klaviyo.com/en/docs/authenticate_" target="_blank" rel="noopener noreferrer">https://developers.klaviyo.com/en/docs/authenticate_</a></td>
+        </tr>
+        
+        <tr>
+          <td>37</td>
+          <td><strong>systeme.io</strong></td>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Other</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://systeme.io/" target="_blank" rel="noopener noreferrer">https://systeme.io/</a></td>
+        </tr>
+        
+        <tr>
+          <td>38</td>
+          <td><strong>Pinterest</strong></td>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>OAuth</td>
+          <td>admin-approval-required</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://developers.pinterest.com/docs/getting-started/connect-app/" target="_blank" rel="noopener noreferrer">https://developers.pinterest.com/docs/getting-started/connect-app/</a></td>
+        </tr>
+        
+        <tr>
+          <td>39</td>
+          <td><strong>Threads (Meta)</strong></td>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developers.facebook.com/documentation/threads" target="_blank" rel="noopener noreferrer">https://developers.facebook.com/documentation/threads</a><br><a href="https://developers.facebook.com/documentation/threads/get-started" target="_blank" rel="noopener noreferrer">https://developers.facebook.com/documentation/threads/get-started</a></td>
+        </tr>
+        
+        <tr>
+          <td>40</td>
+          <td><strong>SendGrid</strong></td>
+          <td>Marketing, Ads, Email and Social</td>
+          <td>API key/token</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://www.twilio.com/docs/sendgrid/api-reference" target="_blank" rel="noopener noreferrer">https://www.twilio.com/docs/sendgrid/api-reference</a><br><a href="https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication" target="_blank" rel="noopener noreferrer">https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication</a></td>
+        </tr>
+        
+        <tr>
+          <td>41</td>
+          <td><strong>Shopify</strong></td>
+          <td>Ecommerce</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST+GraphQL</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://shopify.dev/docs/api" target="_blank" rel="noopener noreferrer">https://shopify.dev/docs/api</a><br><a href="https://shopify.dev/docs/apps/build/authentication-authorization" target="_blank" rel="noopener noreferrer">https://shopify.dev/docs/apps/build/authentication-authorization</a></td>
+        </tr>
+        
+        <tr>
+          <td>42</td>
+          <td><strong>WooCommerce</strong></td>
+          <td>Ecommerce</td>
+          <td>API key/token</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://woocommerce.com/document/woocommerce-rest-api/" target="_blank" rel="noopener noreferrer">https://woocommerce.com/document/woocommerce-rest-api/</a></td>
+        </tr>
+        
+        <tr>
+          <td>43</td>
+          <td><strong>BigCommerce</strong></td>
+          <td>Ecommerce</td>
+          <td>API key/token, JWT, OAuth</td>
+          <td>unknown</td>
+          <td>REST+GraphQL</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/abandoned-carts" target="_blank" rel="noopener noreferrer">https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/abandoned-carts</a><br><a href="https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts" target="_blank" rel="noopener noreferrer">https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts</a></td>
+        </tr>
+        
+        <tr>
+          <td>44</td>
+          <td><strong>Salesforce Commerce Cloud</strong></td>
+          <td>Ecommerce</td>
+          <td>API key/token, OAuth</td>
+          <td>admin-approval-required</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/scapi-get-started.html" target="_blank" rel="noopener noreferrer">https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/scapi-get-started.html</a><br><a href="https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html" target="_blank" rel="noopener noreferrer">https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html</a><br><a href="https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html" target="_blank" rel="noopener noreferrer">https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html</a></td>
+        </tr>
+        
+        <tr>
+          <td>45</td>
+          <td><strong>Magento (Adobe Commerce)</strong></td>
+          <td>Ecommerce</td>
+          <td>API key/token, OAuth, User/SSO</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://developer.adobe.com/commerce/webapi/rest/" target="_blank" rel="noopener noreferrer">https://developer.adobe.com/commerce/webapi/rest/</a><br><a href="https://developer.adobe.com/commerce/webapi/rest/authentication/" target="_blank" rel="noopener noreferrer">https://developer.adobe.com/commerce/webapi/rest/authentication/</a></td>
+        </tr>
+        
+        <tr>
+          <td>46</td>
+          <td><strong>Squarespace</strong></td>
+          <td>Ecommerce</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://developers.squarespace.com/" target="_blank" rel="noopener noreferrer">https://developers.squarespace.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>47</td>
+          <td><strong>Ecwid</strong></td>
+          <td>Ecommerce</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://docs.ecwid.com" target="_blank" rel="noopener noreferrer">https://docs.ecwid.com</a><br><a href="https://docs.ecwid.com" target="_blank" rel="noopener noreferrer">https://docs.ecwid.com</a></td>
+        </tr>
+        
+        <tr>
+          <td>48</td>
+          <td><strong>Gumroad</strong></td>
+          <td>Ecommerce</td>
+          <td>API key/token, OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://gumroad.com/api" target="_blank" rel="noopener noreferrer">https://gumroad.com/api</a></td>
+        </tr>
+        
+        <tr>
+          <td>49</td>
+          <td><strong>Amazon Selling Partner API</strong></td>
+          <td>Ecommerce</td>
+          <td>OAuth, User/SSO</td>
+          <td>admin-approval-required</td>
+          <td>REST+GraphQL</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developer-docs.amazon/sp-api/" target="_blank" rel="noopener noreferrer">https://developer-docs.amazon/sp-api/</a><br><a href="https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api" target="_blank" rel="noopener noreferrer">https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api</a></td>
+        </tr>
+        
+        <tr>
+          <td>50</td>
+          <td><strong>FanBasis (now Commas)</strong></td>
+          <td>Ecommerce</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Other</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://commas.com/" target="_blank" rel="noopener noreferrer">https://commas.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>51</td>
+          <td><strong>DataForSEO</strong></td>
+          <td>Data, SEO and Scraping</td>
+          <td>Basic</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://docs.dataforseo.com/v3/" target="_blank" rel="noopener noreferrer">https://docs.dataforseo.com/v3/</a><br><a href="https://docs.dataforseo.com/v3/auth/" target="_blank" rel="noopener noreferrer">https://docs.dataforseo.com/v3/auth/</a></td>
+        </tr>
+        
+        <tr>
+          <td>52</td>
+          <td><strong>SE Ranking</strong></td>
+          <td>Data, SEO and Scraping</td>
+          <td>Unknown</td>
+          <td>self-serve-trial</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://seranking.com/api.html" target="_blank" rel="noopener noreferrer">https://seranking.com/api.html</a></td>
+        </tr>
+        
+        <tr>
+          <td>53</td>
+          <td><strong>Ahrefs</strong></td>
+          <td>Data, SEO and Scraping</td>
+          <td>API key/token, OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://docs.ahrefs.com" target="_blank" rel="noopener noreferrer">https://docs.ahrefs.com</a></td>
+        </tr>
+        
+        <tr>
+          <td>54</td>
+          <td><strong>MrScraper</strong></td>
+          <td>Data, SEO and Scraping</td>
+          <td>API key/token</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://docs.mrscraper.com/docs/getting-started/overview" target="_blank" rel="noopener noreferrer">https://docs.mrscraper.com/docs/getting-started/overview</a></td>
+        </tr>
+        
+        <tr>
+          <td>55</td>
+          <td><strong>Apify</strong></td>
+          <td>Data, SEO and Scraping</td>
+          <td>API key/token</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://docs.apify.com/api/v2" target="_blank" rel="noopener noreferrer">https://docs.apify.com/api/v2</a><br><a href="https://docs.apify.com/integrations/api" target="_blank" rel="noopener noreferrer">https://docs.apify.com/integrations/api</a></td>
+        </tr>
+        
+        <tr>
+          <td>56</td>
+          <td><strong>Firecrawl</strong></td>
+          <td>Data, SEO and Scraping</td>
+          <td>API key/token</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://docs.firecrawl.dev/introduction" target="_blank" rel="noopener noreferrer">https://docs.firecrawl.dev/introduction</a></td>
+        </tr>
+        
+        <tr>
+          <td>57</td>
+          <td><strong>Bright Data</strong></td>
+          <td>Data, SEO and Scraping</td>
+          <td>Unknown</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://docs.brightdata.com/introduction" target="_blank" rel="noopener noreferrer">https://docs.brightdata.com/introduction</a></td>
+        </tr>
+        
+        <tr>
+          <td>58</td>
+          <td><strong>Sherlock</strong></td>
+          <td>Data, SEO and Scraping</td>
+          <td>Unknown</td>
+          <td>self-serve-free</td>
+          <td>CLI</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://github.com/sherlock-project/sherlock" target="_blank" rel="noopener noreferrer">https://github.com/sherlock-project/sherlock</a></td>
+        </tr>
+        
+        <tr>
+          <td>59</td>
+          <td><strong>Waterfall.io</strong></td>
+          <td>Data, SEO and Scraping</td>
+          <td>API key/token</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://www.waterfall.io/" target="_blank" rel="noopener noreferrer">https://www.waterfall.io/</a></td>
+        </tr>
+        
+        <tr>
+          <td>60</td>
+          <td><strong>Clay</strong></td>
+          <td>Data, SEO and Scraping</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Other</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://www.clay.com/" target="_blank" rel="noopener noreferrer">https://www.clay.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>61</td>
+          <td><strong>GitHub</strong></td>
+          <td>Developer, Infra and Data platforms</td>
+          <td>API key/token</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://docs.github.com/en/rest" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/rest</a><br><a href="https://docs.github.com/en/rest/authentication" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/rest/authentication</a></td>
+        </tr>
+        
+        <tr>
+          <td>62</td>
+          <td><strong>Vercel</strong></td>
+          <td>Developer, Infra and Data platforms</td>
+          <td>API key/token</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://vercel.com/docs/rest-api" target="_blank" rel="noopener noreferrer">https://vercel.com/docs/rest-api</a><br><a href="https://vercel.com/docs/rest-api" target="_blank" rel="noopener noreferrer">https://vercel.com/docs/rest-api</a></td>
+        </tr>
+        
+        <tr>
+          <td>63</td>
+          <td><strong>Netlify</strong></td>
+          <td>Developer, Infra and Data platforms</td>
+          <td>API key/token, OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/" target="_blank" rel="noopener noreferrer">https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/</a></td>
+        </tr>
+        
+        <tr>
+          <td>64</td>
+          <td><strong>Cloudflare</strong></td>
+          <td>Developer, Infra and Data platforms</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST+GraphQL</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://developers.cloudflare.com/api/" target="_blank" rel="noopener noreferrer">https://developers.cloudflare.com/api/</a><br><a href="https://developers.cloudflare.com/fundamentals/api/" target="_blank" rel="noopener noreferrer">https://developers.cloudflare.com/fundamentals/api/</a></td>
+        </tr>
+        
+        <tr>
+          <td>65</td>
+          <td><strong>Supabase</strong></td>
+          <td>Developer, Infra and Data platforms</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST+GraphQL</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://supabase.com/docs" target="_blank" rel="noopener noreferrer">https://supabase.com/docs</a><br><a href="https://supabase.com/docs/reference" target="_blank" rel="noopener noreferrer">https://supabase.com/docs/reference</a></td>
+        </tr>
+        
+        <tr>
+          <td>66</td>
+          <td><strong>Neo4j</strong></td>
+          <td>Developer, Infra and Data platforms</td>
+          <td>Unknown</td>
+          <td>self-serve-free</td>
+          <td>Unknown</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://neo4j.com/docs/api/" target="_blank" rel="noopener noreferrer">https://neo4j.com/docs/api/</a></td>
+        </tr>
+        
+        <tr>
+          <td>67</td>
+          <td><strong>Snowflake</strong></td>
+          <td>Developer, Infra and Data platforms</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Unknown</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://docs.snowflake.com/en/" target="_blank" rel="noopener noreferrer">https://docs.snowflake.com/en/</a></td>
+        </tr>
+        
+        <tr>
+          <td>68</td>
+          <td><strong>MongoDB Atlas</strong></td>
+          <td>Developer, Infra and Data platforms</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://www.mongodb.com/docs/atlas/api/" target="_blank" rel="noopener noreferrer">https://www.mongodb.com/docs/atlas/api/</a></td>
+        </tr>
+        
+        <tr>
+          <td>69</td>
+          <td><strong>Datadog</strong></td>
+          <td>Developer, Infra and Data platforms</td>
+          <td>OAuth</td>
+          <td>self-serve-trial</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://docs.datadoghq.com/api/latest/" target="_blank" rel="noopener noreferrer">https://docs.datadoghq.com/api/latest/</a></td>
+        </tr>
+        
+        <tr>
+          <td>70</td>
+          <td><strong>Sentry</strong></td>
+          <td>Developer, Infra and Data platforms</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://docs.sentry.io/api/" target="_blank" rel="noopener noreferrer">https://docs.sentry.io/api/</a></td>
+        </tr>
+        
+        <tr>
+          <td>71</td>
+          <td><strong>Notion</strong></td>
+          <td>Productivity and Project Management</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://developers.notion.com/guides/get-started/overview" target="_blank" rel="noopener noreferrer">https://developers.notion.com/guides/get-started/overview</a><br><a href="https://developers.notion.com/reference/authentication" target="_blank" rel="noopener noreferrer">https://developers.notion.com/reference/authentication</a></td>
+        </tr>
+        
+        <tr>
+          <td>72</td>
+          <td><strong>Airtable</strong></td>
+          <td>Productivity and Project Management</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://airtable.com/developers/web/api/introduction" target="_blank" rel="noopener noreferrer">https://airtable.com/developers/web/api/introduction</a></td>
+        </tr>
+        
+        <tr>
+          <td>73</td>
+          <td><strong>Linear</strong></td>
+          <td>Productivity and Project Management</td>
+          <td>API key/token, OAuth</td>
+          <td>unknown</td>
+          <td>GraphQL</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://linear.app/developers" target="_blank" rel="noopener noreferrer">https://linear.app/developers</a><br><a href="https://linear.app/developers" target="_blank" rel="noopener noreferrer">https://linear.app/developers</a></td>
+        </tr>
+        
+        <tr>
+          <td>74</td>
+          <td><strong>Jira</strong></td>
+          <td>Productivity and Project Management</td>
+          <td>Basic, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developer.atlassian.com/cloud/jira/platform/rest/v3/" target="_blank" rel="noopener noreferrer">https://developer.atlassian.com/cloud/jira/platform/rest/v3/</a><br><a href="https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/" target="_blank" rel="noopener noreferrer">https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/</a></td>
+        </tr>
+        
+        <tr>
+          <td>75</td>
+          <td><strong>Asana</strong></td>
+          <td>Productivity and Project Management</td>
+          <td>API key/token, OAuth, Service account</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://developers.asana.com/docs/overview" target="_blank" rel="noopener noreferrer">https://developers.asana.com/docs/overview</a><br><a href="https://developers.asana.com/docs/authentication" target="_blank" rel="noopener noreferrer">https://developers.asana.com/docs/authentication</a></td>
+        </tr>
+        
+        <tr>
+          <td>76</td>
+          <td><strong>Monday.com</strong></td>
+          <td>Productivity and Project Management</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>GraphQL</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://developer.monday.com/api-reference/docs/basics" target="_blank" rel="noopener noreferrer">https://developer.monday.com/api-reference/docs/basics</a><br><a href="https://developer.monday.com/api-reference/docs/authentication" target="_blank" rel="noopener noreferrer">https://developer.monday.com/api-reference/docs/authentication</a></td>
+        </tr>
+        
+        <tr>
+          <td>77</td>
+          <td><strong>ClickUp</strong></td>
+          <td>Productivity and Project Management</td>
+          <td>OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://developer.clickup.com" target="_blank" rel="noopener noreferrer">https://developer.clickup.com</a><br><a href="https://developer.clickup.com/" target="_blank" rel="noopener noreferrer">https://developer.clickup.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>78</td>
+          <td><strong>Coda</strong></td>
+          <td>Productivity and Project Management</td>
+          <td>API key/token</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://coda.io/developers/apis/v1" target="_blank" rel="noopener noreferrer">https://coda.io/developers/apis/v1</a></td>
+        </tr>
+        
+        <tr>
+          <td>79</td>
+          <td><strong>Smartsheet</strong></td>
+          <td>Productivity and Project Management</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://developers.smartsheet.com/" target="_blank" rel="noopener noreferrer">https://developers.smartsheet.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>80</td>
+          <td><strong>Harvest</strong></td>
+          <td>Productivity and Project Management</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://help.getharvest.com/api-v2/" target="_blank" rel="noopener noreferrer">https://help.getharvest.com/api-v2/</a></td>
+        </tr>
+        
+        <tr>
+          <td>81</td>
+          <td><strong>Stripe</strong></td>
+          <td>Finance and Fintech</td>
+          <td>API key/token</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://docs.stripe.com/api" target="_blank" rel="noopener noreferrer">https://docs.stripe.com/api</a><br><a href="https://docs.stripe.com/keys-best-practices" target="_blank" rel="noopener noreferrer">https://docs.stripe.com/keys-best-practices</a></td>
+        </tr>
+        
+        <tr>
+          <td>82</td>
+          <td><strong>Plaid</strong></td>
+          <td>Finance and Fintech</td>
+          <td>API key/token</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://plaid.com/docs/" target="_blank" rel="noopener noreferrer">https://plaid.com/docs/</a><br><a href="https://plaid.com/docs/api/" target="_blank" rel="noopener noreferrer">https://plaid.com/docs/api/</a></td>
+        </tr>
+        
+        <tr>
+          <td>83</td>
+          <td><strong>Binance</strong></td>
+          <td>Finance and Fintech</td>
+          <td>API key/token</td>
+          <td>unknown</td>
+          <td>REST+GraphQL</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://developers.binance.com/en/docs/" target="_blank" rel="noopener noreferrer">https://developers.binance.com/en/docs/</a><br><a href="https://developers.binance.com/en/docs/products/spot/CHANGELOG" target="_blank" rel="noopener noreferrer">https://developers.binance.com/en/docs/products/spot/CHANGELOG</a></td>
+        </tr>
+        
+        <tr>
+          <td>84</td>
+          <td><strong>Paygent Connect</strong></td>
+          <td>Finance and Fintech</td>
+          <td>API key/token, OAuth</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>buildable-with-setup</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://docs.nmi.com/" target="_blank" rel="noopener noreferrer">https://docs.nmi.com/</a><br><a href="https://docs.nmi.com/llms.txt" target="_blank" rel="noopener noreferrer">https://docs.nmi.com/llms.txt</a></td>
+        </tr>
+        
+        <tr>
+          <td>85</td>
+          <td><strong>iPayX</strong></td>
+          <td>Finance and Fintech</td>
+          <td>Unknown</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://www.ipayx.ai/" target="_blank" rel="noopener noreferrer">https://www.ipayx.ai/</a></td>
+        </tr>
+        
+        <tr>
+          <td>86</td>
+          <td><strong>QuickBooks</strong></td>
+          <td>Finance and Fintech</td>
+          <td>OAuth</td>
+          <td>unknown</td>
+          <td>REST+GraphQL</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities" target="_blank" rel="noopener noreferrer">https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities</a><br><a href="https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization" target="_blank" rel="noopener noreferrer">https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization</a></td>
+        </tr>
+        
+        <tr>
+          <td>87</td>
+          <td><strong>Xero</strong></td>
+          <td>Finance and Fintech</td>
+          <td>API key/token, OAuth</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>buildable-with-setup</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://developer.xero.com/documentation/api/accounting/overview" target="_blank" rel="noopener noreferrer">https://developer.xero.com/documentation/api/accounting/overview</a><br><a href="https://developer.xero.com/documentation/guides/oauth2/overview/" target="_blank" rel="noopener noreferrer">https://developer.xero.com/documentation/guides/oauth2/overview/</a></td>
+        </tr>
+        
+        <tr>
+          <td>88</td>
+          <td><strong>Brex</strong></td>
+          <td>Finance and Fintech</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://developer.brex.com/" target="_blank" rel="noopener noreferrer">https://developer.brex.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>89</td>
+          <td><strong>Ramp</strong></td>
+          <td>Finance and Fintech</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://docs.ramp.com/" target="_blank" rel="noopener noreferrer">https://docs.ramp.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>90</td>
+          <td><strong>PitchBook</strong></td>
+          <td>Finance and Fintech</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>No-public-API-found</td>
+          <td><span class="tag no">No</span></td>
+          <td>blocked</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://pitchbook.com/" target="_blank" rel="noopener noreferrer">https://pitchbook.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>91</td>
+          <td><strong>NotebookLM</strong></td>
+          <td>AI, Research and Media-native</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Unknown</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://cloud.google.com/ai/gemini" target="_blank" rel="noopener noreferrer">https://cloud.google.com/ai/gemini</a></td>
+        </tr>
+        
+        <tr>
+          <td>92</td>
+          <td><strong>Otter AI</strong></td>
+          <td>AI, Research and Media-native</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Unknown</td>
+          <td><span class="tag no">No</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://help.otter.ai/hc/en-us" target="_blank" rel="noopener noreferrer">https://help.otter.ai/hc/en-us</a></td>
+        </tr>
+        
+        <tr>
+          <td>93</td>
+          <td><strong>Fathom</strong></td>
+          <td>AI, Research and Media-native</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Other</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://www.fathom.ai/" target="_blank" rel="noopener noreferrer">https://www.fathom.ai/</a></td>
+        </tr>
+        
+        <tr>
+          <td>94</td>
+          <td><strong>Consensus</strong></td>
+          <td>AI, Research and Media-native</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>No-public-API-found</td>
+          <td><span class="tag no">No</span></td>
+          <td>blocked</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://consensus.app/" target="_blank" rel="noopener noreferrer">https://consensus.app/</a></td>
+        </tr>
+        
+        <tr>
+          <td>95</td>
+          <td><strong>Reducto</strong></td>
+          <td>AI, Research and Media-native</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://docs.reducto.ai/overview" target="_blank" rel="noopener noreferrer">https://docs.reducto.ai/overview</a></td>
+        </tr>
+        
+        <tr>
+          <td>96</td>
+          <td><strong>Devin</strong></td>
+          <td>AI, Research and Media-native</td>
+          <td>Unknown</td>
+          <td>unknown</td>
+          <td>Other</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>low</td>
+          <td>review</td>
+          <td><a href="https://docs.devin.ai/get-started/devin-intro" target="_blank" rel="noopener noreferrer">https://docs.devin.ai/get-started/devin-intro</a></td>
+        </tr>
+        
+        <tr>
+          <td>97</td>
+          <td><strong>higgsfield</strong></td>
+          <td>AI, Research and Media-native</td>
+          <td>User/SSO</td>
+          <td>unknown</td>
+          <td>CLI</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>buildable-with-setup</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://higgsfield.ai/cli" target="_blank" rel="noopener noreferrer">https://higgsfield.ai/cli</a></td>
+        </tr>
+        
+        <tr>
+          <td>98</td>
+          <td><strong>Mermaid CLI</strong></td>
+          <td>AI, Research and Media-native</td>
+          <td>Unknown</td>
+          <td>self-serve-free</td>
+          <td>CLI</td>
+          <td><span class="tag no">No</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>pass</td>
+          <td><a href="https://github.com/mermaid-js/mermaid-cli" target="_blank" rel="noopener noreferrer">https://github.com/mermaid-js/mermaid-cli</a></td>
+        </tr>
+        
+        <tr>
+          <td>99</td>
+          <td><strong>YouTube Transcript</strong></td>
+          <td>AI, Research and Media-native</td>
+          <td>API key/token</td>
+          <td>self-serve-free</td>
+          <td>REST</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>agent-ready</td>
+          <td>high</td>
+          <td>review</td>
+          <td><a href="https://transcriptapi.com/" target="_blank" rel="noopener noreferrer">https://transcriptapi.com/</a></td>
+        </tr>
+        
+        <tr>
+          <td>100</td>
+          <td><strong>Grain</strong></td>
+          <td>AI, Research and Media-native</td>
+          <td>User/SSO</td>
+          <td>self-serve-free</td>
+          <td>Unknown</td>
+          <td><span class="tag yes">Yes</span></td>
+          <td>uncertain</td>
+          <td>medium</td>
+          <td>review</td>
+          <td><a href="https://grain.com/" target="_blank" rel="noopener noreferrer">https://grain.com/</a></td>
+        </tr>
+        
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>
+      Known research limitations
+    </h2>
+
+    <ul>
+
+      <li>
+        Composio Browser Tool execution was unavailable in the assessment
+        environment (HTTP 403), so local Playwright was used as the fallback.
+      </li>
+
+      <li>
+        Fixed URL candidates are useful but imperfect; some pages redirected,
+        returned thin content, or required a browser.
+      </li>
+
+      <li>
+        Authentication labels were normalized for the summary view, while
+        the underlying final records retain the original agent evidence.
+      </li>
+
+      <li>
+        Some apps require deeper targeted evidence research before their
+        credential path or MCP status should be considered final.
+      </li>
+
+    </ul>
+
+  </section>
+
+  <section>
+
+    <h2>
+      What I would build next
+    </h2>
+
+    <div class="insight-grid">
+
+      <div class="insight">
+        <h3>
+          Targeted evidence discovery
+        </h3>
+        Automatically search specifically for authentication, API access,
+        pricing, developer onboarding, and MCP pages when the first pass
+        leaves those fields unresolved.
+      </div>
+
+      <div class="insight">
+        <h3>
+          Evidence-aware second pass
+        </h3>
+        Trigger a targeted re-research loop only for missing fields rather
+        than rerunning the entire app research task.
+      </div>
+
+      <div class="insight">
+        <h3>
+          Better taxonomy
+        </h3>
+        Canonicalize authentication mechanisms and blockers before producing
+        aggregate portfolio-level insights.
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    Composio Product Ops Intern take-home •
+    100-app research pipeline •
+    Evidence-first and human-verified where required.
+
+  </footer>
+
+</div>
+
+</body>
+</html>

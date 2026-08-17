@@ -1,0 +1,4584 @@
+[
+  {
+    "app": "Salesforce",
+    "category": "CRM and Sales",
+    "what_it_does": "Salesforce provides an enterprise-grade cloud-based CRM platform and developer tools to build apps, manage customer relationships, and execute complex business logic.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "Announcing the Headless 360 MCP Server (Beta) and Salesforce Developer Edition including Hosted MCP Servers.",
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developer.salesforce.com/",
+      "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/intro_using_oauth.html",
+      "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/quickstart.html",
+      "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/intro_using_curl.html"
+    ],
+    "evidence_summary": [
+      "Salesforce developer portal overview showcasing APIs, Model Context Protocol (MCP) servers, and Developer Edition features.",
+      "Details OAuth usage and external client app setup for the Connect REST API.",
+      "Provides quickstart instructions indicating a free Salesforce Developer Edition is available for testing and development alongside OAuth setup.",
+      "Describes HTTP methods, REST usage, and OAuth 2.0 access tokens for Connect REST API."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "1",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.salesforce.com/",
+      "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/intro_using_oauth.html",
+      "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/quickstart.html",
+      "https://developer.salesforce.com/docs/platform/connect-rest-api/guide/intro_using_curl.html"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests",
+      "requests",
+      "requests"
+    ],
+    "pages_found": 4,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "HubSpot",
+    "category": "CRM and Sales",
+    "what_it_does": "HubSpot provides date-versioned APIs to interact with HubSpot data and platform resources using a predictable versioning scheme.",
+    "auth_methods": [
+      "OAuth2",
+      "private app access token",
+      "Service Key"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": "Developer Tools access is required to create Service Keys.",
+    "evidence_urls": [
+      "https://developers.hubspot.com/docs/api-reference/latest/overview"
+    ],
+    "evidence_summary": [
+      "The source documentation outlines HubSpot's date-versioned APIs (introduced with the 2026-03 release), root path https://api.hubapi.com/, and basic endpoint patterns but does not provide authentication methods, credential acquisition paths, MCP support, or full API breadth details."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human needs to verify authentication methods, credential paths (self-serve vs paid/admin), whether an MCP integration is available, and the overall API surface breadth since the provided documentation only covers a brief API versioning overview.",
+    "id": "2",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.hubspot.com/docs/api-reference/latest/overview"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": true,
+    "human_corrections": {
+      "auth_methods": [
+        "OAuth2",
+        "private app access token",
+        "Service Key"
+      ],
+      "credential_path": "unknown",
+      "mcp_available": true,
+      "buildability": "buildable-with-setup",
+      "main_blocker": "Developer Tools access is required to create Service Keys."
+    },
+    "human_notes": "Manual verification found that the first-pass agent missed documented authentication options and MCP support. HubSpot documents OAuth, private-app access tokens, and the newer Service Key model. Service Key creation requires Developer Tools access, but the available evidence does not establish that the credential path is universally admin-only, so credential_path remains unknown rather than being overstated. HubSpot also documents a self-service MCP Auth Apps flow for its Remote MCP Server.",
+    "verification_status": "human-verified"
+  },
+  {
+    "app": "Pipedrive",
+    "category": "CRM and Sales",
+    "what_it_does": "Pipedrive is a Web-based Sales CRM.",
+    "auth_methods": [
+      "API token",
+      "OAuth 2.0"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developers.pipedrive.com/docs/api/v1"
+    ],
+    "evidence_summary": [
+      "Pipedrive API documentation details a RESTful API supporting API tokens and OAuth 2.0, covering major core CRM resources such as Activities, Deals, Organizations, Persons, and Leads, with a sandbox account request option available."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": "A human should verify the precise tier restrictions for API access across different paid Pipedrive subscription plans and confirm whether any Model Context Protocol (MCP) servers have been officially released since this documentation snapshot.",
+    "id": "3",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.pipedrive.com/docs/api/v1"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Confidence is high despite having fewer than two evidence pages."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Attio",
+    "category": "CRM and Sales",
+    "what_it_does": "Attio is a customizable, data-driven CRM platform that allows developers to build powerful integrations, automations, and data pipelines.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation lists 'MCP' as part of the Attio Developer Platform, stating: 'Manage Attio via AI. Connect Claude, ChatGPT or your AI tool of choice to search, update and manage your Attio workspace.'",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://docs.attio.com/docs/overview"
+    ],
+    "evidence_summary": [
+      "The official overview documentation establishes that Attio provides an App SDK, REST API, MCP support, and SQL querying capabilities, but does not detail authentication methods or credential paths."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human needs to check the authentication methods, exact credential creation paths, and detailed API references since the provided documentation only gives a high-level overview without auth details.",
+    "id": "4",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.attio.com/docs/overview",
+      "https://docs.attio.com/docs/overview"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Twenty",
+    "category": "CRM and Sales",
+    "what_it_does": "Twenty is an open-source CRM platform designed for technical teams to build, ship, and customize as part of their stack.",
+    "auth_methods": [],
+    "credential_path": "self-serve-free",
+    "api_type": "Unknown",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication and API documentation details",
+    "evidence_urls": [
+      "https://docs.twenty.com/getting-started/introduction",
+      "https://github.com/twentyhq/twenty"
+    ],
+    "evidence_summary": [
+      "Twenty documentation explains that Twenty is an open-source, self-hostable or cloud-based CRM platform supporting custom developer building blocks.",
+      "GitHub repository references Twenty CLI and SDK features for scaffolding apps, but specific API reference endpoints and authentication mechanisms are not detailed in the supplied text."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation pages do not specify the exact API type (REST/GraphQL), authentication mechanisms, or detailed API reference endpoints. A human should review the developer documentation regarding API access and authentication.",
+    "id": "5",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.twenty.com/getting-started/introduction",
+      "https://github.com/twentyhq/twenty"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Authentication methods were not established from the evidence.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Public API type is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Podio",
+    "category": "CRM and Sales",
+    "what_it_does": "The Podio API provides a complete programmable interface to all Podio functionality, enabling users to integrate with other services and build tools and applications on top of Podio.",
+    "auth_methods": [
+      "OAuth2",
+      "Bearer token",
+      "Username & password flow",
+      "App authentication flow"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developers.podio.com/",
+      "https://developers.podio.com/authentication"
+    ],
+    "evidence_summary": [
+      "The main developers page establishes that developers need a Podio account and can generate an API key from their account settings page to access a complete programmable interface covering all Podio functionality.",
+      "The authentication page details that the Podio API uses the OAuth2 protocol and supports server-side flow, client-side flow, username and password flow, and app authentication flow requiring a Client ID and Client Secret."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": "A human should verify whether MCP integration exists as it was not mentioned in the supplied developer documentation, and confirm whether free self-serve developer API access is subject to any plan restrictions on Podio.",
+    "id": "6",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.podio.com/",
+      "https://developers.podio.com/authentication"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Zoho CRM",
+    "category": "CRM and Sales",
+    "what_it_does": "Zoho CRM V8 APIs enable third-party applications to perform CRUD operations on CRM module entities, fetch metadata, combine multiple API calls, and integrate with Zoho CRM via flexible RESTful endpoints.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://www.zoho.com/crm/developer/docs/api/v8/",
+      "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html"
+    ],
+    "evidence_summary": [
+      "Source 1 establishes that Zoho CRM V8 APIs provide RESTful endpoints for CRUD operations, metadata, composite, bulk, notification, and query APIs.",
+      "Source 2 establishes that the Zoho CRM API uses the OAuth 2.0 protocol for authentication utilizing client ID, client secret, access tokens, and refresh tokens."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation does not explicitly detail the exact self-serve developer account creation steps or credential path (e.g., whether a paid plan or specific admin approval is required to register an OAuth client), and MCP availability was not mentioned in the text.",
+    "id": "7",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.zoho.com/crm/developer/docs/api/v8/",
+      "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Close",
+    "category": "CRM and Sales",
+    "what_it_does": "Close is a CRM and sales platform that enables teams to automate workflows, manage leads and communications, and extend platform capabilities via APIs and integrations.",
+    "auth_methods": [
+      "API keys",
+      "OAuth 2.0"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation explicitly references an 'MCP Server: Model Context Protocol for AI agents' and states to 'Power AI agents — Give Claude, ChatGPT, Cursor, and other tools direct access to Close data via the MCP server — no code required.'",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developer.close.com/"
+    ],
+    "evidence_summary": [
+      "The developer documentation establishes that Close provides a REST API, API keys, OAuth 2.0 authentication, webhooks, community API libraries, and an official MCP server for AI agents."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "8",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.close.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Confidence is high despite having fewer than two evidence pages."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Copper",
+    "category": "CRM and Sales",
+    "what_it_does": "The Copper Web API allows you to access and build your own applications that interact with Copper in more complex ways than the integrations provided out of the box.",
+    "auth_methods": [
+      "OAuth2.0"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developer.copper.com/"
+    ],
+    "evidence_summary": [
+      "The official Copper Developer API documentation provides details about the RESTful interface, OAuth2.0 authentication overview, and various resource endpoints such as leads, people, companies, and opportunities, but does not provide explicit details regarding developer credential sign-up paths or MCP availability."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "A human should verify how to obtain developer credentials (e.g., whether self-serve-free or a paid plan is required) and check if an MCP integration is available outside the provided developer docs.",
+    "id": "9",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.copper.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "DealCloud",
+    "category": "CRM and Sales",
+    "what_it_does": "DealCloud provides an API for developers to integrate and manage CRM data, entries, users, reports, and relationship intelligence features.",
+    "auth_methods": [
+      "API Keys",
+      "Authorization Token"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "DealCloud MCP Server — client preview starting July 2026",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://api.docs.dealcloud.com/"
+    ],
+    "evidence_summary": [
+      "The documentation lists API reference topics including Getting Started, API Keys, Authorization Token, Core Schema, Data, and a client preview of the DealCloud MCP Server starting July 2026."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human needs to verify how developer credentials and API keys are obtained, whether a paid plan or admin approval is required, and the exact details of authentication and endpoint usability.",
+    "id": "10",
+    "status": "success",
+    "source_urls_used": [
+      "https://api.docs.dealcloud.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Zendesk",
+    "category": "Support and Helpdesk",
+    "what_it_does": "Zendesk provides APIs for ticketing, help center, live chat, voice, sales CRM, and other customer service and support capabilities.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developer.zendesk.com/api-reference/"
+    ],
+    "evidence_summary": [
+      "The API reference home page lists various Zendesk product capabilities including ticketing, help center, AI agents, messaging, voice, custom data, omnichannel, status, live chat, sales CRM, and IT asset management, demonstrating a broad API surface."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation text lacks explicit details on authentication methods, the developer credential path (such as whether self-serve is free or requires a paid plan), and whether an MCP integration exists.",
+    "id": "11",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.zendesk.com/api-reference/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Intercom",
+    "category": "Support and Helpdesk",
+    "what_it_does": "The Intercom Developer Platform is a suite of SDKs and APIs for building apps that connect with Intercom to extend functionality or integrate with other services.",
+    "auth_methods": [
+      "OAuth",
+      "Access Token"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The sidebar documentation explicitly lists Model Context Protocol (MCP) and pages provide instructions to Install MCP server on Cursor and Install MCP server on VS Code.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developers.intercom.com/docs"
+    ],
+    "evidence_summary": [
+      "The official developer documentation outlines free developer account sign up, REST APIs, OAuth configuration, Access Token usage for private apps, and Model Context Protocol (MCP) server installation."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "12",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.intercom.com/docs"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Confidence is high despite having fewer than two evidence pages."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Freshdesk",
+    "category": "Support and Helpdesk",
+    "what_it_does": "Freshdesk is a cloud-based customer support platform that enables companies of all sizes to provide great customer service.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developers.freshdesk.com/api/"
+    ],
+    "evidence_summary": [
+      "The documentation outlines Freshdesk v2 REST APIs covering tickets, contacts, companies, agents, and administration, but does not provide specific authentication methods or credential paths in the supplied text."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation text lacks information regarding authentication methods, credential paths, and MCP integration status.",
+    "id": "13",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.freshdesk.com/api/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Front",
+    "category": "Support and Helpdesk",
+    "what_it_does": "Front is a customer operations platform that brings email, team collaboration, and other communication channels into a single shared inbox.",
+    "auth_methods": [
+      "OAuth",
+      "API tokens"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "Access Front data and actions through the MCP protocol, allowing AI agents like Claude and ChatGPT to read and reply to conversations and other Front resources.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://dev.frontapp.com/docs/welcome",
+      "https://dev.frontapp.com/reference/authentication"
+    ],
+    "evidence_summary": [
+      "Source 1 details developer account creation for a free developer environment, core APIs, and MCP server availability.",
+      "Source 2 outlines authentication via OAuth and API tokens, along with API reference endpoints."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "14",
+    "status": "success",
+    "source_urls_used": [
+      "https://dev.frontapp.com/docs/welcome",
+      "https://dev.frontapp.com/reference/authentication"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Pylon",
+    "category": "Support and Helpdesk",
+    "what_it_does": "Pylon is the first agentic support platform built for B2B that tracks customer issues across any channel and orchestrates agents to investigate and act on them.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Unknown",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://docs.usepylon.com/pylon-docs"
+    ],
+    "evidence_summary": [
+      "The documentation introduction page outlines Pylon's features, mentions a Developer API section in the index, and references 'Pylon MCP' under the Integrations/Security area, but lacks details on authentication methods, credential paths, and API specifications."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied text is only a high-level introduction page. A human must verify the exact authentication methods, credential generation path, public API surface type, API breadth, and whether the mentioned Pylon MCP is an official available MCP server.",
+    "id": "15",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.usepylon.com/pylon-docs"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Public API type is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 40,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "LiveAgent",
+    "category": "Support and Helpdesk",
+    "what_it_does": "LiveAgent provides customer support software featuring a help desk, omnichannel service hub, ticketing, live chat, call center, and knowledge base capabilities.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Unknown",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://www.liveagent.com/api/"
+    ],
+    "evidence_summary": [
+      "The provided source URL for LiveAgent API returned a 404 Not Found error page, containing general company information and promotional text, but no technical API documentation."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied API documentation URL returned a 404 error page. A human must verify the actual developer documentation, authentication mechanisms, API type, breadth, credential path, and MCP status.",
+    "id": "16",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.liveagent.com/api/"
+    ],
+    "retrieval_methods": [
+      "playwright"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Public API type is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 40,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Plain",
+    "category": "Support and Helpdesk",
+    "what_it_does": "Plain is a customer support platform built with an exposed GraphQL API that enables managing support threads, customers, companies, and related support operations.",
+    "auth_methods": [
+      "Bearer token",
+      "API key"
+    ],
+    "credential_path": "unknown",
+    "api_type": "GraphQL",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation explicitly mentions: 'If you’re looking to access our GraphQL API from an Agent, try our MCP Server instead.'",
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://www.plain.com/docs/graphql/introduction"
+    ],
+    "evidence_summary": [
+      "Established that Plain provides a GraphQL API using Bearer tokens/API keys for authentication, has broad feature parity with the UI, and offers an MCP Server for agent access."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation mentions an MCP server and API keys, but does not detail how developer accounts are initially provisioned or whether a paid plan is required to obtain credentials.",
+    "id": "17",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.plain.com/docs/graphql/introduction",
+      "https://www.plain.com/docs/graphql/introduction"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Help Scout",
+    "category": "Support and Helpdesk",
+    "what_it_does": "Help Scout provides customer support tools including inbox management, live chat, help docs, and APIs to read and write data to Help Scout inboxes.",
+    "auth_methods": [
+      "OAuth 2"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developer.helpscout.com/",
+      "https://developer.helpscout.com/mailbox-api/"
+    ],
+    "evidence_summary": [
+      "The main developer portal outlines Apps, Beacon, Inbox API, Docs API, and Webhooks.",
+      "The Inbox API 2.0 documentation confirms an HTTPS-only REST API using OAuth 2 authentication and JSON."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "A human must verify whether developer accounts and OAuth app credentials can be obtained via a self-serve path or if any paid plans or approvals are required, as this was not explicitly detailed in the provided documentation text.",
+    "id": "18",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.helpscout.com/",
+      "https://developer.helpscout.com/mailbox-api/"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Gorgias",
+    "category": "Support and Helpdesk",
+    "what_it_does": "Integrate with Gorgias to support thousands of shop owners, grow your app audience, or build a private app to empower your support team.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developers.gorgias.com/",
+      "https://developers.gorgias.com/reference/introduction"
+    ],
+    "evidence_summary": [
+      "Explains how to join the developer portal, build private/public apps, and outlines general developer documentation.",
+      "Documents the Gorgias REST API reference including objects like accounts, customers, events, macros, tickets, and mentions that the API is structured with REST in mind."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "Specific authentication methods and credential acquisition paths are not detailed in the provided documentation text; human verification is required to determine exact auth types and self-serve vs. restricted paths.",
+    "id": "19",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.gorgias.com/",
+      "https://developers.gorgias.com/reference/introduction"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Gladly",
+    "category": "Support and Helpdesk",
+    "what_it_does": "Gladly is a customer service platform that allows users to extend its capabilities via REST APIs, webhooks, app platform integrations, and data exports.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developer.gladly.com/"
+    ],
+    "evidence_summary": [
+      "Gladly developer portal lists REST APIs, webhooks, app platform integrations, and chat SDKs."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation lacks details on authentication methods, credential generation path, and API endpoint breadth. Human verification is needed to determine how to obtain API access and credentials.",
+    "id": "20",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.gladly.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Slack",
+    "category": "Communications and Messaging",
+    "what_it_does": "The Slack Web API is an interface for querying information from and enacting change in a Slack workspace.",
+    "auth_methods": [
+      "OAuth 2.0",
+      "Bearer token"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.slack.dev/apis/web-api/",
+      "https://docs.slack.dev/authentication/"
+    ],
+    "evidence_summary": [
+      "Source 1 documents the Slack Web API, HTTP RPC-style methods, endpoints, bearer token usage, and OAuth 2.0 authentication requirements.",
+      "Source 2 documents authentication overviews, OAuth 2.0 implementation, token management, and permission scopes."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation establishes OAuth 2.0 and token-based authentication and a broad Web API, but does not explicitly confirm whether creating a developer account is completely free-tier self-serve or requires admin/paid gates, and MCP status was not addressed.",
+    "id": "21",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.slack.dev/apis/web-api/",
+      "https://docs.slack.dev/authentication/"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Twilio",
+    "category": "Communications and Messaging",
+    "what_it_does": "The Twilio APIs let you build applications that help your users send messages, make phone calls, look up phone numbers, and more.",
+    "auth_methods": [
+      "HTTP Basic and Digest Authentication"
+    ],
+    "credential_path": "self-serve-trial",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://www.twilio.com/docs/usage/api",
+      "https://www.twilio.com/docs/usage/security"
+    ],
+    "evidence_summary": [
+      "Source 1 establishes the REST API structure, products supported (Messaging, Voice, etc.), and trial account sign-up path.",
+      "Source 2 outlines authentication mechanisms (HTTP Basic and Digest Authentication) and request validation using Account SID and Auth Token."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "22",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.twilio.com/docs/usage/api",
+      "https://www.twilio.com/docs/usage/security"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Zoho Cliq",
+    "category": "Communications and Messaging",
+    "what_it_does": "Zoho Cliq provides team communication and collaboration tools including chats, messaging, channels, threads, meetings, events, reminders, and bots via a REST API.",
+    "auth_methods": [
+      "OAuth 2.0"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://www.zoho.com/cliq/help/restapi/v2/introduction/#overview"
+    ],
+    "evidence_summary": [
+      "The source provides documentation for Zoho Cliq's REST API version 2, its OAuth 2.0 authentication mechanism, multi-datacenter endpoints, OpenAPI specification availability, and broad coverage of resources such as chats, messages, channels, threads, reminders, bots, and user management."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "The documentation details the REST API surface and OAuth 2.0 authentication, but does not specify whether developer credential creation is self-serve-free, trial-based, or requires a paid plan. Additionally, MCP support was not addressed in the provided text.",
+    "id": "23",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.zoho.com/cliq/help/restapi/v2/introduction/#overview"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Lark (Larksuite)",
+    "category": "Communications and Messaging",
+    "what_it_does": "Lark is an enterprise collaboration platform providing developer guides, server and client APIs, and developer tools for building custom applications, bots, gadgets, and web apps across multiple business domains.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://open.larksuite.com/document/home/index",
+      "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication/"
+    ],
+    "evidence_summary": [
+      "Source 1 details Lark's developer home, server APIs, client APIs, developer console, and various business domain capabilities such as Messenger, Calendar, Drive, and Sheets.",
+      "Source 2 points to an authentication documentation page that returned a 'documentation could not be found' error message."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied authentication documentation page could not be found (404/not found), leaving specific auth methods and credential paths unverified. A human should verify how API credentials and tokens are obtained in the Lark Developer Console.",
+    "id": "24",
+    "status": "success",
+    "source_urls_used": [
+      "https://open.larksuite.com/document/home/index",
+      "https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication/"
+    ],
+    "retrieval_methods": [
+      "playwright",
+      "playwright"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Pumble",
+    "category": "Communications and Messaging",
+    "what_it_does": "The all-in-one team communication app to send messages and files to team members, find them with unlimited message history, and start video conferencing with one click.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Unknown",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "The source mentions: Connect AI agents: Use Pumble's MCP server to optimize collaboration with AI agents. Summarize conversations, find lost files, automate updates, and much more.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://pumble.com/"
+    ],
+    "evidence_summary": [
+      "The official landing page establishes that Pumble is a team communication tool featuring channels, messages, threads, video/voice calls, and a documented MCP server for connecting AI agents, but lacks explicit details on developer APIs or authentication methods."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied text is from a marketing landing page and lacks specific developer documentation. A human must verify API availability, public endpoint documentation, authentication methods, and credential acquisition paths.",
+    "id": "25",
+    "status": "success",
+    "source_urls_used": [
+      "https://pumble.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Public API type is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Discord",
+    "category": "Communications and Messaging",
+    "what_it_does": "The Discord API is a REST API that allows you to interact with Discord data from your own applications.",
+    "auth_methods": [
+      "Bot token",
+      "OAuth2 bearer token",
+      "HTTP Basic authentication"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.discord.com/developers/reference",
+      "https://docs.discord.com/developers/topics/oauth2"
+    ],
+    "evidence_summary": [
+      "Establishes the Discord API as a REST API, details authentication via bot tokens and OAuth2, and sets base URL and standards.",
+      "Details OAuth2 authorization flows, grants, and developer application registration prerequisites."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "26",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.discord.com/developers/reference",
+      "https://docs.discord.com/developers/topics/oauth2"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Telegram",
+    "category": "Communications and Messaging",
+    "what_it_does": "The Telegram Bot API is an HTTP-based interface created for developers keen on building bots for Telegram.",
+    "auth_methods": [
+      "Other documented mechanisms"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://core.telegram.org/bots/api"
+    ],
+    "evidence_summary": [
+      "The source documentation outlines the Telegram Bot API, authentication using a unique token obtained upon bot creation, HTTP-based requests via HTTPS, and general capabilities."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "27",
+    "status": "success",
+    "source_urls_used": [
+      "https://core.telegram.org/bots/api"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Confidence is high despite having fewer than two evidence pages."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "WhatsApp Business Platform",
+    "category": "Communications and Messaging",
+    "what_it_does": "The WhatsApp Business Platform enables businesses to communicate with customers at scale using enterprise-grade APIs for messaging and calling.",
+    "auth_methods": [
+      "OAuth access tokens"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developers.facebook.com/documentation/business-messaging/whatsapp/overview",
+      "https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform"
+    ],
+    "evidence_summary": [
+      "Source 1 provides an overview of the WhatsApp Business Platform APIs, resources, documentation sections, and sample requests using Bearer tokens.",
+      "Source 2 details the core APIs and capabilities such as Cloud API, Business Management API, Marketing Messages API, webhooks, authentication mechanisms using OAuth access tokens, and automatic test resource generation."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": "Supplied API documentation did not establish whether an official Model Context Protocol (MCP) integration exists.",
+    "id": "28",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.facebook.com/documentation/business-messaging/whatsapp/overview",
+      "https://developers.facebook.com/documentation/business-messaging/whatsapp/about-the-platform"
+    ],
+    "retrieval_methods": [
+      "playwright",
+      "playwright"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Aircall",
+    "category": "Communications and Messaging",
+    "what_it_does": "Aircall provides a cloud-based business phone system and intelligence platform with APIs and tools for automating workflows, powering AI virtual agents, and managing calls, contacts, and users.",
+    "auth_methods": [
+      "OAuth",
+      "Basic Auth"
+    ],
+    "credential_path": "partner-gated",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "Source 1 mentions: 'Connect your tools and data to Aircall's AI Virtual Agents through MCP. Handle inbound and outbound calls. Let them pull context from your tools, take real actions mid-call, and escalate to a human when needed.' and 'give agents actions through MCP'.",
+    "buildability": "buildable-with-setup",
+    "main_blocker": "partner approval / partner-gated onboarding required for OAuth client ID and secret generation",
+    "evidence_urls": [
+      "https://developer.aircall.io/",
+      "https://developers.aircall.io/api-references"
+    ],
+    "evidence_summary": [
+      "Source 1 provides an overview of the Aircall developer platform, APIs, webhooks, and mentions connecting AI virtual agents through MCP.",
+      "Source 2 details the REST API surface, authentication via OAuth and Basic Auth, webhook support, and endpoints for users, teams, calls, messaging, contacts, conversation intelligence, and analytics."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "29",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.aircall.io/",
+      "https://developers.aircall.io/api-references"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Vonage",
+    "category": "Communications and Messaging",
+    "what_it_does": "Vonage API allows developers to integrate communication capabilities like voice, video, messaging, and network features into web, mobile, and IoT applications.",
+    "auth_methods": [
+      "API key",
+      "JWT authentication"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developer.vonage.com/en/home",
+      "https://developer.vonage.com/en/api"
+    ],
+    "evidence_summary": [
+      "The home page provides documentation on Voice, Video, Messaging, Network Features, Low Code and AI, and Privacy and Security APIs, mentioning free account creation and JWT authentication.",
+      "The API page details the full suite of REST APIs available, including Messaging, Voice, Network Features, Core Services, Numbers, Account, Pricing, Verify, and Security and Compliance."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "30",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.vonage.com/en/home",
+      "https://developer.vonage.com/en/api"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Google Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "what_it_does": "The Google Ads API is a programmatic interface for managing Google Ads accounts and campaigns, suitable for large or complex setups.",
+    "auth_methods": [
+      "OAuth 2.0",
+      "Developer token",
+      "Service account",
+      "User authentication workflow"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation index explicitly lists a 'Google Ads MCP server' under the developer toolkit section.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developers.google.com/google-ads/api/docs/get-started/introduction",
+      "https://developers.google.com/google-ads/api/docs/oauth/overview"
+    ],
+    "evidence_summary": [
+      "Source 1 introduces the Google Ads API, its primary uses, developer toolkit components including the Google Ads MCP server, and links to guides and reference materials.",
+      "Source 2 outlines the OAuth 2.0 protocol requirements and the necessity of a developer token to make Google Ads API calls."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "A human must verify whether obtaining a developer token and credential path is completely self-serve or requires approval/paid tiers, as the provided pages mention a developer token is required but do not detail the exact signup friction or tier gates.",
+    "id": "31",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.google.com/google-ads/api/docs/get-started/introduction",
+      "https://developers.google.com/google-ads/api/docs/oauth/overview"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Meta Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "what_it_does": "The Marketing API is a collection of Graph API endpoints and other features that can be used to help you advertise across Meta technologies.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "GraphQL",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developers.facebook.com/documentation/ads-commerce/marketing-api"
+    ],
+    "evidence_summary": [
+      "The source documents that the Marketing API is a collection of Graph API endpoints used to advertise across Meta technologies, supporting broad campaign creation and management."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation does not detail specific authentication methods, exact developer credential paths (such as self-serve vs. app review/approval), or whether an MCP integration exists.",
+    "id": "32",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+      "https://developers.facebook.com/documentation/ads-commerce/marketing-api"
+    ],
+    "retrieval_methods": [
+      "playwright",
+      "playwright"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "LinkedIn Ads",
+    "category": "Marketing, Ads, Email and Social",
+    "what_it_does": "The LinkedIn Marketing Platform helps businesses grow by building technology to reach, engage, and convert professional audiences at scale through APIs for campaign management, reporting, lead management, and company page growth.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-08",
+      "https://learn.microsoft.com/en-us/linkedin/shared/authentication/"
+    ],
+    "evidence_summary": [
+      "Establishes the LinkedIn Marketing API Program capabilities including advertising, campaign management, reporting, lead sync, and community management.",
+      "The authentication documentation URL returned a 404 page not found error, leaving specific auth mechanisms unconfirmed."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "Authentication methods, exact credential paths (self-serve vs partner-gated), and MCP status cannot be fully determined because the authentication documentation URL returned a 404 error and the marketing docs do not detail developer signup or access requirements.",
+    "id": "33",
+    "status": "success",
+    "source_urls_used": [
+      "https://learn.microsoft.com/en-us/linkedin/marketing/?view=li-lms-2026-08",
+      "https://learn.microsoft.com/en-us/linkedin/shared/authentication/"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "playwright"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "GoHighLevel",
+    "category": "Marketing, Ads, Email and Social",
+    "what_it_does": "Provides a comprehensive CRM platform and REST API for managing contacts, conversations, calendars, opportunities, payments, and webhooks.",
+    "auth_methods": [
+      "OAuth 2.0",
+      "Private Integration Token"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://marketplace.gohighlevel.com/docs/"
+    ],
+    "evidence_summary": [
+      "The official GoHighLevel developer portal documents a REST API covering CRM, conversations, calendars, opportunities, payments, and webhooks, and specifies OAuth 2.0 and Private Integration Tokens for authentication."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation does not detail whether developer credentials and private integration tokens can be obtained via a self-serve free process or require a paid plan/admin approval, and it does not establish whether an MCP integration exists.",
+    "id": "34",
+    "status": "success",
+    "source_urls_used": [
+      "https://marketplace.gohighlevel.com/docs/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Mailchimp",
+    "category": "Marketing, Ads, Email and Social",
+    "what_it_does": "Mailchimp's developer tools provide everything you need to integrate your data with intelligent marketing tools and event-driven transactional email and SMS.",
+    "auth_methods": [
+      "API key",
+      "OAuth2",
+      "HTTP Basic Authentication",
+      "Bearer Authentication"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://mailchimp.com/developer/",
+      "https://mailchimp.com/developer/marketing/docs/fundamentals/"
+    ],
+    "evidence_summary": [
+      "Source 1 outlines Mailchimp developer products including Marketing API, Transactional, and Open Commerce, along with account creation access.",
+      "Source 2 details API authentication using API keys or OAuth 2, REST architecture, rate limits, and that users need an account to obtain an API key."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "35",
+    "status": "success",
+    "source_urls_used": [
+      "https://mailchimp.com/developer/",
+      "https://mailchimp.com/developer/marketing/docs/fundamentals/"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Klaviyo",
+    "category": "Marketing, Ads, Email and Social",
+    "what_it_does": "Klaviyo is a marketing automation platform providing server-side and client-side APIs to manage digital relationships, customer profiles, events, campaigns, and flows.",
+    "auth_methods": [
+      "Private key authentication",
+      "Public key authentication",
+      "OAuth"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developers.klaviyo.com/en/docs/getting_started",
+      "https://developers.klaviyo.com/en/docs/authenticate_"
+    ],
+    "evidence_summary": [
+      "Getting started guide outlines core API documentation structure, SDK overview, and developer community resources.",
+      "Authentication documentation outlines private key, public key, and OAuth mechanisms, along with comprehensive scope and endpoint details."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "36",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.klaviyo.com/en/docs/getting_started",
+      "https://developers.klaviyo.com/en/docs/authenticate_"
+    ],
+    "retrieval_methods": [
+      "playwright",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "systeme.io",
+    "category": "Marketing, Ads, Email and Social",
+    "what_it_does": "Systeme.io is an all-in-one marketing platform that provides tools for sales funnels, email marketing, online courses, blogging, and affiliate management.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Other",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication and lack of detailed developer documentation in the provided sources",
+    "evidence_urls": [
+      "https://systeme.io/"
+    ],
+    "evidence_summary": [
+      "The homepage indicates that a Public API exists under footer links, but provides no documentation, endpoints, authentication methods, or developer portal details."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human should check the actual developer documentation or API reference page (referenced vaguely as Public API in the footer) to determine authentication methods, credential paths, API type, and breadth.",
+    "id": "37",
+    "status": "success",
+    "source_urls_used": [
+      "https://systeme.io/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Pinterest",
+    "category": "Marketing, Ads, Email and Social",
+    "what_it_does": "Allows developers to build applications that connect with the Pinterest platform using APIs and OAuth 2 authentication.",
+    "auth_methods": [
+      "OAuth2",
+      "Product limited tokens"
+    ],
+    "credential_path": "admin-approval-required",
+    "api_type": "REST",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": "admin approval",
+    "evidence_urls": [
+      "https://developers.pinterest.com/docs/getting-started/connect-app/"
+    ],
+    "evidence_summary": [
+      "Details the process for creating a Pinterest business account, submitting a request for trial access, configuring redirect URIs, using OAuth 2, and obtaining app ID and secret keys upon approval."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "The documentation mentions trial access approval via application request review and references an API reference and Python SDK, but does not fully detail the complete API surface breadth or mention Model Context Protocol (MCP) support.",
+    "id": "38",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.pinterest.com/docs/getting-started/connect-app/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Threads (Meta)",
+    "category": "Marketing, Ads, Email and Social",
+    "what_it_does": "Use the Threads API to create and publish posts, retrieve media and profiles, moderate replies, and access insights.",
+    "auth_methods": [
+      "OAuth 2.0"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "moderate",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developers.facebook.com/documentation/threads",
+      "https://developers.facebook.com/documentation/threads/get-started"
+    ],
+    "evidence_summary": [
+      "Source 1 establishes the overview of the Threads API, its endpoints, guides, and documentation contents.",
+      "Source 2 details the prerequisites for using the Threads API, including creating a Meta app with the Threads use case, OAuth 2.0 access tokens, permissions, and app review processes for public rollout."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": "Supplied API documentation did not establish whether an MCP integration exists, and permissions require app review for production rollout.",
+    "id": "39",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.facebook.com/documentation/threads",
+      "https://developers.facebook.com/documentation/threads/get-started"
+    ],
+    "retrieval_methods": [
+      "playwright",
+      "playwright"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "SendGrid",
+    "category": "Marketing, Ads, Email and Social",
+    "what_it_does": "SendGrid provides a cloud-based email delivery and management platform for sending transactional and marketing emails.",
+    "auth_methods": [
+      "API key"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://www.twilio.com/docs/sendgrid/api-reference",
+      "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication"
+    ],
+    "evidence_summary": [
+      "The API reference lists extensive endpoint categories including mail send, account provisioning, contacts, stats, and settings.",
+      "The authentication documentation outlines how to use API keys with the SendGrid v3 API."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "The supplied text does not specify whether credentials can be obtained via a self-serve free tier or if a paid plan is strictly required, and does not mention Model Context Protocol (MCP) support.",
+    "id": "40",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.twilio.com/docs/sendgrid/api-reference",
+      "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Shopify",
+    "category": "Ecommerce",
+    "what_it_does": "Turn your idea into a working integration with tools to build across every Shopify surface including APIs, libraries, and stores.",
+    "auth_methods": [
+      "OAuth 2.0",
+      "Session tokens",
+      "Token exchange",
+      "Authorization code grant",
+      "Client credentials grant",
+      "Access tokens"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST+GraphQL",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://shopify.dev/docs/api",
+      "https://shopify.dev/docs/apps/build/authentication-authorization"
+    ],
+    "evidence_summary": [
+      "Source 1 lists Shopify APIs including the GraphQL Admin API, REST Admin API (legacy), Storefront API, and development store setup.",
+      "Source 2 details authentication and authorization flows such as OAuth 2.0, session tokens, token exchange, authorization code grant, and client credentials grant."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "41",
+    "status": "success",
+    "source_urls_used": [
+      "https://shopify.dev/docs/api",
+      "https://shopify.dev/docs/apps/build/authentication-authorization"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "WooCommerce",
+    "category": "Ecommerce",
+    "what_it_does": "The WooCommerce REST API connects your store to external systems and services.",
+    "auth_methods": [
+      "API key"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://woocommerce.com/document/woocommerce-rest-api/"
+    ],
+    "evidence_summary": [
+      "Official documentation detailing how the WooCommerce REST API works, how to generate Consumer Key and Consumer Secret credentials from the WordPress dashboard, and links to technical reference guides."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation establishes self-serve API key generation via a WordPress/WooCommerce site, but does not provide details on the breadth of the API endpoints or whether an MCP integration exists.",
+    "id": "42",
+    "status": "success",
+    "source_urls_used": [
+      "https://woocommerce.com/document/woocommerce-rest-api/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "BigCommerce",
+    "category": "Ecommerce",
+    "what_it_does": "BigCommerce offers a suite of APIs that let you manage store data, sign customers in, make client-side queries for product information, and write apps that integrate third-party services into store operations.",
+    "auth_methods": [
+      "OAuth2",
+      "Stable tokens",
+      "Access tokens",
+      "BigCommerce-generated JWTs",
+      "User-generated JWTs",
+      "BigCommerce-encrypted payload JWTs",
+      "Same-origin CORS authentication"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST+GraphQL",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/abandoned-carts",
+      "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts"
+    ],
+    "evidence_summary": [
+      "Source 1 documents the REST and GraphQL reference endpoints for BigCommerce, demonstrating a broad API catalog spanning management, storefront, catalog, customers, orders, and more.",
+      "Source 2 details API accounts, authentication methods including OAuth2 and various token types, and different account flavors like store-level and app-level API accounts."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation details extensive REST and GraphQL APIs and authentication options, but does not explicitly state whether the developer credential path is entirely self-serve-free, trial-based, or requires paid/admin access. Furthermore, MCP integration status was not explicitly confirmed or denied in the supplied documentation text.",
+    "id": "43",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/abandoned-carts",
+      "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Salesforce Commerce Cloud",
+    "category": "Ecommerce",
+    "what_it_does": "The B2C Commerce API (SCAPI) is a set of RESTful APIs for building storefronts, merchant tools, and integrations on the B2C Commerce platform.",
+    "auth_methods": [
+      "OAuth 2.1",
+      "Account Manager API client credentials",
+      "Bearer access token"
+    ],
+    "credential_path": "admin-approval-required",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "To explore SCAPI from your IDE using AI assistants, use the B2C DX MCP Server (Developer Preview).",
+    "buildability": "buildable-with-setup",
+    "main_blocker": "Administrator access is required to create the SCAPI Admin API client.",
+    "evidence_urls": [
+      "https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/scapi-get-started.html",
+      "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html",
+      "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html"
+    ],
+    "evidence_summary": [
+      "Establishes SCAPI as a set of RESTful APIs, outlines usage of demo sandboxes, and mentions the B2C DX MCP Server in developer preview.",
+      "Explains that SCAPI uses OAuth 2.1 and JWT Bearer tokens, dividing access between Admin APIs and Shopper APIs.",
+      "Details the step-by-step process of creating an API client in Account Manager to authenticate and retrieve access tokens for SCAPI Admin APIs."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "44",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/scapi-get-started.html",
+      "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html",
+      "https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization-for-admin-apis.html"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests",
+      "requests"
+    ],
+    "pages_found": 3,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "Confidence is high despite an unknown credential path."
+    ],
+    "quality_score": 80,
+    "human_verified": true,
+    "human_corrections": {
+      "auth_methods": [
+        "OAuth 2.1",
+        "Account Manager API client credentials",
+        "Bearer access token"
+      ],
+      "credential_path": "admin-approval-required",
+      "api_type": "REST",
+      "api_breadth": "broad",
+      "mcp_available": true,
+      "buildability": "buildable-with-setup",
+      "main_blocker": "Administrator access is required to create the SCAPI Admin API client."
+    },
+    "human_notes": "Manual verification against current Salesforce Commerce Cloud SCAPI documentation. The B2C Commerce API is explicitly documented as RESTful. Shopper APIs use SLAS with OAuth 2.1, while Admin APIs use Account Manager. Salesforce states that the user or someone with administrator access must create the API client for SCAPI Admin APIs. The getting-started documentation also explicitly documents the B2C DX MCP Server in Developer Preview.",
+    "verification_status": "human-verified"
+  },
+  {
+    "app": "Magento (Adobe Commerce)",
+    "category": "Ecommerce",
+    "what_it_does": "The REST API documentation describes the REST APIs that are available in Adobe Commerce (PaaS) and Adobe Commerce as a Cloud Service (SaaS) to perform a wide array of tasks such as creating shopping apps, integrating with CRM or ERP backend systems, and connecting with CMS.",
+    "auth_methods": [
+      "OAuth 1.0a",
+      "Tokens",
+      "Login credentials",
+      "Adobe Identity Management Service (IMS) Access Token",
+      "OAuth 2 protocols"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developer.adobe.com/commerce/webapi/rest/",
+      "https://developer.adobe.com/commerce/webapi/rest/authentication/"
+    ],
+    "evidence_summary": [
+      "Outlines REST API overview, endpoints, URL structure, and mentions support for OAuth 1.0a, tokens, login credentials, and Adobe IMS Access Tokens for cloud service.",
+      "Details REST authentication methods in Adobe Commerce as a Cloud Service via Adobe IMS (OAuth 2), including server-to-server and user authentication flows, alongside prerequisites like an Adobe Commerce as a Cloud Service license."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation references prerequisites such as an Adobe Commerce as a Cloud Service license and Adobe Developer Console access, but does not explicitly detail whether self-serve-free or trial developer credentials can be obtained without paid plans or contact with sales. Furthermore, MCP integration status was not mentioned in the text and requires verification.",
+    "id": "45",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.adobe.com/commerce/webapi/rest/",
+      "https://developer.adobe.com/commerce/webapi/rest/authentication/"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Squarespace",
+    "category": "Ecommerce",
+    "what_it_does": "Provides APIs, apps, and documentation to build and publish external apps, manage commerce, resell websites and domains, and customize sites.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "moderate",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developers.squarespace.com/"
+    ],
+    "evidence_summary": [
+      "The source page details the Squarespace Developer Platform including Commerce APIs with REST endpoints, webhooks, Reseller APIs, custom code specs, and mentions AI compatibility for integrating API docs into Claude or ChatGPT."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation does not specify the exact authentication methods, credential path (self-serve vs paid plan/approval), or whether an official Model Context Protocol (MCP) server exists (despite mentioning AI compatibility with Claude or ChatGPT).",
+    "id": "46",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.squarespace.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Ecwid",
+    "category": "Ecommerce",
+    "what_it_does": "Build apps and integrate with Ecwid Ecommerce to customize stores, automate workflows, and extend store functionality.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "moderate",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://docs.ecwid.com"
+    ],
+    "evidence_summary": [
+      "The official Ecwid documentation home page outlines REST API reference, webhooks, JS API, storefronts, and guides for building apps and integrating with Ecwid Ecommerce, but does not provide details on specific authentication methods or credential paths."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation pages do not specify the authentication methods used, the exact credential acquisition path (whether self-serve or requiring approval), or whether an MCP integration is available.",
+    "id": "47",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.ecwid.com",
+      "https://docs.ecwid.com"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Gumroad",
+    "category": "Ecommerce",
+    "what_it_does": "Gumroad provides tools and an API for creators to sell products, digital downloads, memberships, and courses directly to consumers.",
+    "auth_methods": [
+      "OAuth2",
+      "Access token"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "moderate",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://gumroad.com/api"
+    ],
+    "evidence_summary": [
+      "The official API documentation details REST endpoints, OAuth scopes, access tokens, a CLI wrapper, and error handling for Gumroad."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation does not explicitly detail whether developer account creation or credential paths are self-serve free or require a paid plan, nor does it establish whether an MCP server exists.",
+    "id": "48",
+    "status": "success",
+    "source_urls_used": [
+      "https://gumroad.com/api"
+    ],
+    "retrieval_methods": [
+      "playwright"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Amazon Selling Partner API",
+    "category": "Ecommerce",
+    "what_it_does": "Provides a REST-based API that enables selling partners and developers to programmatically access Amazon's features for listings, orders, payments, fulfillment, and more.",
+    "auth_methods": [
+      "OAuth2",
+      "Login with Amazon (LWA)"
+    ],
+    "credential_path": "admin-approval-required",
+    "api_type": "REST+GraphQL",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": "admin approval",
+    "evidence_urls": [
+      "https://developer-docs.amazon/sp-api/",
+      "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api"
+    ],
+    "evidence_summary": [
+      "Official documentation portal describing the REST-based Selling Partner API (SP-API), endpoints, models, and general architectural structure.",
+      "Documentation detailing onboarding steps including developer profile creation, registration, LWA credentials, sandbox applications, and production application registration."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "49",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer-docs.amazon/sp-api/",
+      "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "FanBasis (now Commas)",
+    "category": "Ecommerce",
+    "what_it_does": "An all-in-one platform to create, sell, and get paid online with built-in payments, checkouts, funnels, communities, courses, and webinars.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Other",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "MCP beta - Run Commas from your AI assistant. Create checkout links, issue refunds and pull your numbers in plain English.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://commas.com/"
+    ],
+    "evidence_summary": [
+      "Source text mentions that FanBasis is now Commas, provides features such as embedded checkouts, multi-rail payouts, APIs, SDKs, and explicitly mentions an 'MCP beta' allowing users to run Commas from an AI assistant, but lacks details on authentication methods, credential paths, and specific API documentation."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied landing page documentation mentions APIs, SDKs, and an MCP beta, but lacks specific technical details regarding authentication mechanisms, developer credential paths, and granular API capabilities.",
+    "id": "50",
+    "status": "success",
+    "source_urls_used": [
+      "https://commas.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "DataForSEO",
+    "category": "Data, SEO and Scraping",
+    "what_it_does": "DataForSEO API provides programmatic access to SEO data, SERP results, backlinks, keywords, and market analysis data.",
+    "auth_methods": [
+      "Basic authentication"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.dataforseo.com/v3/",
+      "https://docs.dataforseo.com/v3/auth/"
+    ],
+    "evidence_summary": [
+      "Source 1 establishes that DataForSEO uses REST technology with an extensive set of APIs covering SERP, AI Optimization, Keywords, Domain Analytics, Backlinks, OnPage, Merchant, App Data, and Business Data.",
+      "Source 2 establishes that DataForSEO uses Basic Authentication where users create a free account, retrieve an API login and password from the dashboard, and send credentials base64 encoded in the Authorization header."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "51",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.dataforseo.com/v3/",
+      "https://docs.dataforseo.com/v3/auth/"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "SE Ranking",
+    "category": "Data, SEO and Scraping",
+    "what_it_does": "Automate SEO and AEO workflows by connecting via API or MCP for custom integrations, bulk processes, and querying data from AI assistants.",
+    "auth_methods": [],
+    "credential_path": "self-serve-trial",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "Documentation explicitly mentions 'API & MCP' and 'Connect via MCP and work with your SEO and AEO data inside Claude, Codex, Cursor, or any other AI tool.'",
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://seranking.com/api.html"
+    ],
+    "evidence_summary": [
+      "The official API page outlines API plans, API & MCP support, pricing, endpoint categories like keyword research and backlinks, and a start free trial button."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "Specific authentication methods (e.g. API key vs OAuth) are not explicitly detailed in the provided text snippet, and the exact credential generation steps require verification.",
+    "id": "52",
+    "status": "success",
+    "source_urls_used": [
+      "https://seranking.com/api.html"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Ahrefs",
+    "category": "Data, SEO and Scraping",
+    "what_it_does": "Access Ahrefs marketing and search data through APIs and developer tools to build custom integrations and workflows.",
+    "auth_methods": [
+      "API key",
+      "OAuth 2.0"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation includes a dedicated MCP section with guides for Claude Desktop / Web, ChatGPT setup, and Claude Code.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://docs.ahrefs.com"
+    ],
+    "evidence_summary": [
+      "The Ahrefs documentation outlines REST API capabilities, API key creation, MCP integration with Claude and ChatGPT, Data Studio connectors, Bot Analytics, and an Ahrefs Connect integration program supporting OAuth 2.0."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "A human should verify how to obtain API keys and whether a paid plan is required for self-serve developer access, as the provided documentation snippet mentions an Enterprise plan reference in free test queries but does not explicitly detail the exact self-serve developer signup or pricing gates.",
+    "id": "53",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.ahrefs.com"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "MrScraper",
+    "category": "Data, SEO and Scraping",
+    "what_it_does": "MrScraper is an all-in-one scraping platform that utilizes AI-powered and manual scrapers to automate and simplify extracting website content.",
+    "auth_methods": [
+      "API token"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation explicitly mentions an 'MCP Server' under Developer Tools allowing AI agents to fetch and extract web data through the Model Context Protocol.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.mrscraper.com/docs/getting-started/overview"
+    ],
+    "evidence_summary": [
+      "The getting-started overview documentation details MrScraper's features, AI agents, SDKs, Developer Tools including CLI, MCP Server, Python SDK, Node.js SDK, LangChain SDK, and API Reference."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "54",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.mrscraper.com/docs/getting-started/overview"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Confidence is high despite having fewer than two evidence pages."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Apify",
+    "category": "Data, SEO and Scraping",
+    "what_it_does": "The Apify API provides programmatic access to the Apify platform for managing actors, storage, proxies, and accounts.",
+    "auth_methods": [
+      "Bearer token",
+      "URL query parameter",
+      "PAYMENT-SIGNATURE header",
+      "skyfire-pay-id header"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.apify.com/api/v2",
+      "https://docs.apify.com/integrations/api"
+    ],
+    "evidence_summary": [
+      "Documents RESTful HTTP endpoints, JSON formatting, OpenAPI schemas, and API clients in multiple languages.",
+      "Details API token creation, scoping, authentication headers, and agentic payment mechanisms."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "55",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.apify.com/api/v2",
+      "https://docs.apify.com/integrations/api"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Firecrawl",
+    "category": "Data, SEO and Scraping",
+    "what_it_does": "Search the web, scrape any page, and interact with it, all through one API.",
+    "auth_methods": [
+      "Bearer token"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation explicitly states 'MCP Server: Connect Firecrawl to any AI tool via the Model Context Protocol' and points to MCP setup options.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.firecrawl.dev/introduction"
+    ],
+    "evidence_summary": [
+      "Establishes Firecrawl's capabilities in web searching, scraping, and interacting, details Bearer token authentication via API keys (with free account creation), mentions the REST API endpoints, confirms Model Context Protocol (MCP) server support, and provides SDK/CLI details."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "56",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.firecrawl.dev/introduction"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Confidence is high despite having fewer than two evidence pages."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Bright Data",
+    "category": "Data, SEO and Scraping",
+    "what_it_does": "Bright Data is a web data platform that helps you collect, process and scale access to public web data through proxies, web access APIs, data feeds, and an MCP server.",
+    "auth_methods": [],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "moderate",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation explicitly lists 'Bright Data MCP quickstart' and an 'MCP server' section stating 'The MCP server connects your models to real-time public web data without scraper management or custom pipelines.'",
+    "buildability": "buildable-with-setup",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://docs.brightdata.com/introduction"
+    ],
+    "evidence_summary": [
+      "The introduction page documents Bright Data's offerings including web access APIs, proxies, datasets, a free tier of 5,000 free credits per month with no credit card required, and an MCP server quickstart."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "Specific authentication methods (e.g., API keys, OAuth) are not detailed in the introduction documentation, and further pages must be checked to confirm exact auth protocols and developer onboarding steps.",
+    "id": "57",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.brightdata.com/introduction"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Sherlock",
+    "category": "Data, SEO and Scraping",
+    "what_it_does": "Hunt down social media accounts by username across social networks.",
+    "auth_methods": [],
+    "credential_path": "self-serve-free",
+    "api_type": "CLI",
+    "api_breadth": "narrow",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": "no public API",
+    "evidence_urls": [
+      "https://github.com/sherlock-project/sherlock"
+    ],
+    "evidence_summary": [
+      "The official GitHub repository documentation establishes that Sherlock is a command-line tool used to hunt down social media accounts by username across over 400 social networks, with installation instructions via pipx, pip, uv, or docker, and provides no documentation for a public API or MCP integration."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation covers a command-line tool (CLI) rather than a developer API or MCP server. Human verification is needed to confirm whether any unofficial wrapper API exists or if an API/MCP is planned.",
+    "id": "58",
+    "status": "success",
+    "source_urls_used": [
+      "https://github.com/sherlock-project/sherlock"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Confidence is high despite having fewer than two evidence pages.",
+      "Confidence is high despite missing authentication evidence."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Waterfall.io",
+    "category": "Data, SEO and Scraping",
+    "what_it_does": "Waterfall is a GTM enrichment API powered by 30+ data vendors that aggregates data to maximize contact, email, and mobile number coverage.",
+    "auth_methods": [
+      "API key"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "narrow",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://www.waterfall.io/"
+    ],
+    "evidence_summary": [
+      "The official landing page explains that Waterfall aggregates 30+ data vendors into a single GTM API, provides curl/Python/Node code examples showing an API key header ('x-waterfall-api-key' or 'x-api-key'), but does not document how to obtain credentials or whether a free trial or self-serve signup is available."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "A human needs to verify how developer credentials can be obtained (e.g., whether self-serve signup is available) and whether an MCP server exists, as these details are not provided in the landing page text.",
+    "id": "59",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.waterfall.io/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Clay",
+    "category": "Data, SEO and Scraping",
+    "what_it_does": "Centralizes go-to-market data sources, automates outbound workflows, and runs AI-powered research and enrichment for revenue teams.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Other",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation explicitly mentions 'MCP for rep' and 'Clay MCP Give reps the best prospecting data in their AI tools' as well as agent plugins.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://www.clay.com/"
+    ],
+    "evidence_summary": [
+      "The official landing page details Clay's core data infrastructure, AI agents, CLI/API capabilities, and Model Context Protocol (MCP) support for GTM reps."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied source text is a marketing landing page and lacks detailed documentation regarding specific API endpoints, exact authentication mechanisms, and standard developer credential acquisition flows.",
+    "id": "60",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.clay.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "GitHub",
+    "category": "Developer, Infra and Data platforms",
+    "what_it_does": "Create integrations, retrieve data, and automate your workflows with the GitHub REST API.",
+    "auth_methods": [
+      "GitHub App installation access tokens",
+      "GitHub App user access tokens",
+      "Fine-grained personal access tokens"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.github.com/en/rest",
+      "https://docs.github.com/en/rest/authentication"
+    ],
+    "evidence_summary": [
+      "Official GitHub REST API documentation overview describing extensive endpoints for repositories, issues, pulls, actions, and workflows.",
+      "Official GitHub REST API authentication documentation detailing fine-grained PATs and GitHub App installation/user tokens."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "61",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.github.com/en/rest",
+      "https://docs.github.com/en/rest/authentication"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Vercel",
+    "category": "Developer, Infra and Data platforms",
+    "what_it_does": "Interact programmatically with your Vercel account using the SDK or direct HTTP requests to deploy new versions of web applications, manage custom domains, retrieve deployment information, and manage secrets and environment variables.",
+    "auth_methods": [
+      "Bearer token"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation mentions 'Vercel MCP' in the navigation menu headers and sidebars.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://vercel.com/docs/rest-api"
+    ],
+    "evidence_summary": [
+      "The source documents the Vercel REST API base URL, Bearer token authentication via Vercel Access Tokens, and extensive endpoint categories covering deployments, projects, domains, storage, and more."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "62",
+    "status": "success",
+    "source_urls_used": [
+      "https://vercel.com/docs/rest-api",
+      "https://vercel.com/docs/rest-api"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Netlify",
+    "category": "Developer, Infra and Data platforms",
+    "what_it_does": "Use the Netlify REST API to manage atomic deploys of your sites and apps, manage form submissions, inject JavaScript snippets, manage DNS, and so much more.",
+    "auth_methods": [
+      "OAuth2",
+      "Bearer token",
+      "Personal access token"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/"
+    ],
+    "evidence_summary": [
+      "The official documentation covers the Netlify REST API base URL, request examples, OAuth2 and personal access token authentication, rate limits, pagination, and deploying via file digests or ZIP files."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation details API usage, authentication methods (OAuth2 and Personal Access Tokens), and endpoints, but does not explicitly state the specific developer credential path (e.g. self-serve-free vs paid plan requirements) or whether an MCP integration exists.",
+    "id": "63",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Cloudflare",
+    "category": "Developer, Infra and Data platforms",
+    "what_it_does": "Cloudflare provides a cloud platform that delivers security, performance, and reliability services for internet applications and infrastructure.",
+    "auth_methods": [
+      "API token",
+      "Global API key",
+      "OAuth"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST+GraphQL",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation lists 'MCP Server' and 'Domain-specific MCP Servers' under agent resources.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developers.cloudflare.com/api/",
+      "https://developers.cloudflare.com/fundamentals/api/"
+    ],
+    "evidence_summary": [
+      "Source 1 details the extensive Cloudflare REST and API reference including account management, tokens, AI, and vector search features.",
+      "Source 2 outlines Cloudflare's API options including REST API, GraphQL API, API tokens, OAuth applications, and MCP Server resources."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "64",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.cloudflare.com/api/",
+      "https://developers.cloudflare.com/fundamentals/api/"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Supabase",
+    "category": "Developer, Infra and Data platforms",
+    "what_it_does": "Supabase provides a complete backend platform with a full Postgres database, authentication, storage, realtime functionality, and edge functions.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST+GraphQL",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation references developing with Supabase AI-first using plugins, MCP, and skills under 'AI tools'.",
+    "buildability": "uncertain",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://supabase.com/docs",
+      "https://supabase.com/docs/reference"
+    ],
+    "evidence_summary": [
+      "Source 1 outlines Supabase features including Postgres database, Auth, Storage, Realtime, Edge Functions, REST API, GraphQL API, CLI, and mentions MCP under AI tools.",
+      "Source 2 documents client libraries, Management API, and CLI references for interacting with Supabase products."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "Specific authentication methods, precise credential creation paths (e.g., self-serve vs. paid), and exact MCP server configuration details were not fully detailed in the provided snippet text.",
+    "id": "65",
+    "status": "success",
+    "source_urls_used": [
+      "https://supabase.com/docs",
+      "https://supabase.com/docs/reference"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Neo4j",
+    "category": "Developer, Infra and Data platforms",
+    "what_it_does": "Neo4j provides a graph database and knowledge layer platform that stores and queries connected data to build smart, accurate, and adaptive applications.",
+    "auth_methods": [],
+    "credential_path": "self-serve-free",
+    "api_type": "Unknown",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation explicitly lists 'Model Context Protocol (MCP)' under developer build options and AI capabilities.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://neo4j.com/docs/api/"
+    ],
+    "evidence_summary": [
+      "The source page mentions general product categories, developer links including MCP support, and 'Get started free' options, but does not detail specific API endpoints, authentication methods, or direct API access mechanisms."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human needs to verify the exact API surface, specific authentication methods, and developer credential provisioning paths since the landing page mentions free starting options and MCP support but lacks specific technical API documentation.",
+    "id": "66",
+    "status": "success",
+    "source_urls_used": [
+      "https://neo4j.com/docs/api/"
+    ],
+    "retrieval_methods": [
+      "playwright"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Public API type is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Snowflake",
+    "category": "Developer, Infra and Data platforms",
+    "what_it_does": "Snowflake is a cloud-based data platform that allows organizations to store, process, and analyze data using scalable virtual warehouses and SQL-based databases.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Unknown",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://docs.snowflake.com/en/"
+    ],
+    "evidence_summary": [
+      "The official Snowflake documentation index was provided, showing links for user guides, developer guides, and reference materials, but lacking specific API authentication, public API surface details, and concrete credential path instructions."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The provided documentation index lacks specific details on API type, authentication methods, credential paths (e.g., self-serve vs. paid), and MCP status. A human must review the detailed subpages for API and authentication references.",
+    "id": "67",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.snowflake.com/en/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Public API type is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 40,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "MongoDB Atlas",
+    "category": "Developer, Infra and Data platforms",
+    "what_it_does": "Interact with Atlas programmatically to perform administrative tasks or manage deployments using administration APIs, SDKs, CLI, and infrastructure-as-code tools.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://www.mongodb.com/docs/atlas/api/"
+    ],
+    "evidence_summary": [
+      "The official MongoDB Atlas programmatic access page outlines the administration API, Go SDK, Embedding and Reranking API, CLI, Terraform provider, CloudFormation resources, and Kubernetes operator, but does not detail authentication methods or credential acquisition paths."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation mentions administrative and embedding APIs and developer tools, but lacks specific details on API authentication methods, whether credentials are self-serve, and whether any Model Context Protocol (MCP) servers are officially available.",
+    "id": "68",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.mongodb.com/docs/atlas/api/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Datadog",
+    "category": "Developer, Infra and Data platforms",
+    "what_it_does": "Datadog is an integrated platform for monitoring and security, providing end-to-end visibility into infrastructure, applications, logs, and security.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "credential_path": "self-serve-trial",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation mentions MCP Server under Agentic & Embedded Bits and Extensibility, as well as an MCP Server Setup guide.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.datadoghq.com/api/latest/"
+    ],
+    "evidence_summary": [
+      "The official Datadog API reference and documentation index details platform capabilities, API usage, authentication methods like OAuth2, and references to MCP Server capabilities."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "69",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.datadoghq.com/api/latest/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Confidence is high despite having fewer than two evidence pages."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Sentry",
+    "category": "Developer, Infra and Data platforms",
+    "what_it_does": "The Sentry web API is used to access the Sentry platform programmatically to manage account-level resources, organizations, teams, and manage/export data.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://docs.sentry.io/api/"
+    ],
+    "evidence_summary": [
+      "The source page introduces the Sentry API Reference, stating it is used to access the platform programmatically for managing resources like organizations and teams, mentions authentication and pagination sections exist, and lists various available API resources such as Crons, Issues, Projects, and Releases."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human needs to check the specific authentication mechanisms, credential generation pathways (such as self-serve vs paid plan requirements), and verify whether an MCP server exists since the supplied text references an authentication tutorial page that was not provided in full.",
+    "id": "70",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.sentry.io/api/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Notion",
+    "category": "Productivity and Project Management",
+    "what_it_does": "Notion connections let you connect your workspace to external tools and automate workflows through code using the REST API.",
+    "auth_methods": [
+      "Bearer token",
+      "Static API token",
+      "OAuth 2.0"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "Source 1 mentions 'Notion MCP' under the 'Get started' navigation and guides list.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developers.notion.com/guides/get-started/overview",
+      "https://developers.notion.com/reference/authentication"
+    ],
+    "evidence_summary": [
+      "Source 1 details Notion's connection types, authentication models (internal connections, public connections, personal access tokens), capabilities, and overview of the REST API.",
+      "Source 2 describes authentication usage with HTTP Authorization headers and bearer tokens."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "71",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.notion.com/guides/get-started/overview",
+      "https://developers.notion.com/reference/authentication"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Airtable",
+    "category": "Productivity and Project Management",
+    "what_it_does": "The Airtable API can be used to integrate your data in Airtable with any external system.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://airtable.com/developers/web/api/introduction"
+    ],
+    "evidence_summary": [
+      "The source page establishes that Airtable provides a REST-based Web API for integrating data with external systems, but does not provide details on specific authentication methods, credential generation, or MCP availability."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human must verify specific authentication mechanisms, credential paths, and whether an official MCP integration exists, as the provided documentation snippet only shows a high-level API introduction without those details.",
+    "id": "72",
+    "status": "success",
+    "source_urls_used": [
+      "https://airtable.com/developers/web/api/introduction"
+    ],
+    "retrieval_methods": [
+      "playwright"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Linear",
+    "category": "Productivity and Project Management",
+    "what_it_does": "Linear provides a project management tool with developers building apps and integrations using its GraphQL API and TypeScript SDK.",
+    "auth_methods": [
+      "OAuth 2.0",
+      "Personal API keys"
+    ],
+    "credential_path": "unknown",
+    "api_type": "GraphQL",
+    "api_breadth": "moderate",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://linear.app/developers"
+    ],
+    "evidence_summary": [
+      "The official Linear developers page documents a GraphQL API, TypeScript SDK, OAuth 2.0 and personal API keys for authentication, and guides for agent interaction, but does not specify exact developer credential self-serve pricing/access tiers or official MCP server availability."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "A human should verify whether obtaining personal API keys or creating OAuth applications is completely self-serve without paid plan restrictions, and check if an official Model Context Protocol (MCP) server exists beyond the general 'Agents' integration guidelines mentioned in the docs.",
+    "id": "73",
+    "status": "success",
+    "source_urls_used": [
+      "https://linear.app/developers",
+      "https://linear.app/developers"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Jira",
+    "category": "Productivity and Project Management",
+    "what_it_does": "Jira Cloud platform REST API enables external applications and services to access Atlassian product APIs on a user's behalf for issues, projects, workflows, and administration.",
+    "auth_methods": [
+      "OAuth 2.0 (3LO)",
+      "Basic auth for REST APIs"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+      "https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/"
+    ],
+    "evidence_summary": [
+      "Establishes the Jira Cloud platform REST API v3 reference surface and available operations.",
+      "Shows that OAuth 2.0 (3LO) apps are created and managed via the self-service developer console profile menu."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": "Supplied API documentation did not establish whether an MCP integration exists, and human verification should check for any newly released Model Context Protocol servers.",
+    "id": "74",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.atlassian.com/cloud/jira/platform/rest/v3/",
+      "https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps/"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Asana",
+    "category": "Productivity and Project Management",
+    "what_it_does": "An Asana app makes it possible to extend or enhance what’s possible with Asana, such as integrating with other tools, adding or extracting data about the Work Graph, or automating workflows.",
+    "auth_methods": [
+      "Personal access token",
+      "Service Account",
+      "OAuth",
+      "OpenID Connect"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation index and sidebar explicitly list 'MCP Server', 'Using Asana's MCP Server', 'Compatible MCP Clients', 'Connecting Coding Clients to Asana's V2 server', 'Integrating with Asana's MCP Server', and 'MCP Tools Reference'.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developers.asana.com/docs/overview",
+      "https://developers.asana.com/docs/authentication"
+    ],
+    "evidence_summary": [
+      "Establishes Asana app overview, developer console, developer sandbox availability, and general platform capabilities including REST API.",
+      "Details specific authentication methods including Personal access token, Service Account, OAuth, and OpenID Connect."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "75",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.asana.com/docs/overview",
+      "https://developers.asana.com/docs/authentication"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Monday.com",
+    "category": "Productivity and Project Management",
+    "what_it_does": "A work OS where teams create and shape their own workflows in minutes, code-free.",
+    "auth_methods": [
+      "Personal V2 API tokens",
+      "OAuth",
+      "shortLivedToken"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "GraphQL",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation lists a 'Platform MCP overview', 'Integrate with the monday MCP server', and various 'Platform MCP tools' such as 'Create Board (Platform MCP)' and 'Get Board Items (Platform MCP)'.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developer.monday.com/api-reference/docs/basics",
+      "https://developer.monday.com/api-reference/docs/authentication"
+    ],
+    "evidence_summary": [
+      "Source 1 establishes that Monday.com provides a GraphQL API for reading and updating data, supports admin, member, and guest users, and details extensive platform MCP overview and tools.",
+      "Source 2 documents that the API utilizes personal V2 API tokens (as well as OAuth and shortLivedToken referenced elsewhere) and outlines how users can retrieve personal tokens via the Developer Center or Administration tab."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "76",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.monday.com/api-reference/docs/basics",
+      "https://developer.monday.com/api-reference/docs/authentication"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "ClickUp",
+    "category": "Productivity and Project Management",
+    "what_it_does": "Develop innovative solutions and build integrations and apps with the ClickUp Public API and MCP Server.",
+    "auth_methods": [
+      "OAuth"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "Connect your AI with ClickUp using our MCP Server. MCP Use ClickUp right from your AI assistant. Get started with the MCP MCP setup instructions MCP tools",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developer.clickup.com",
+      "https://developer.clickup.com/"
+    ],
+    "evidence_summary": [
+      "The official developer portal confirms a Public API and an MCP Server are available, and mentions OAuth for authentication, but does not detail exact credential acquisition steps or full API breadth.",
+      "The official developer portal home page reiterates support for the Public API, Webhooks, OAuth, and MCP Server integration."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human must verify the exact credential path (whether self-serve or paid plan required) and the full breadth and endpoints of the REST API, as the provided documentation only gives a high-level overview.",
+    "id": "77",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.clickup.com",
+      "https://developer.clickup.com/"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Coda",
+    "category": "Productivity and Project Management",
+    "what_it_does": "The Superhuman Docs API is a RESTful API that lets you programmatically interact with data in Superhuman Docs (formerly Coda).",
+    "auth_methods": [
+      "API token"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "Coda's official API reference states that the Coda API is RESTful and also points to the Coda MCP server for LLM-oriented integrations.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://coda.io/developers/apis/v1"
+    ],
+    "evidence_summary": [
+      "Coda documents a REST API for interacting with docs, pages, tables, rows, controls, sharing, and related resources.",
+      "Coda states that its API is available to users in both free and paid workspaces and authenticates requests with an API token.",
+      "The official API reference also points developers toward the Coda MCP server for LLM-oriented usage."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "78",
+    "status": "success",
+    "source_urls_used": [
+      "https://coda.io/developers/apis/v1"
+    ],
+    "retrieval_methods": [
+      "web-verified"
+    ],
+    "pages_found": 1,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Smartsheet",
+    "category": "Productivity and Project Management",
+    "what_it_does": "Smartsheet is a platform for work management and collaboration that enables teams to plan, capture, manage, automate, and report on work.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation mentions 'connect to our MCP server' and lists 'Smartsheet MCP Server Tools'.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developers.smartsheet.com/"
+    ],
+    "evidence_summary": [
+      "The source documentation establishes that Smartsheet provides API docs, SDKs, and an MCP server, but does not detail specific authentication methods or credential acquisition paths."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human must verify the specific authentication mechanisms, credential acquisition path (e.g., self-serve vs paid plan), and full API breadth since the provided source text only gives high-level links without detailed documentation content.",
+    "id": "79",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.smartsheet.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Harvest",
+    "category": "Productivity and Project Management",
+    "what_it_does": "Harvest provides time tracking, invoicing, and expense reporting software for businesses.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://help.getharvest.com/api-v2/"
+    ],
+    "evidence_summary": [
+      "The official Harvest API v2 documentation outlines comprehensive resource coverage including clients, company settings, invoices, estimates, expenses, tasks, timesheets, projects, roles, users, and reports, but does not detail authentication methods, credential generation paths, or MCP support."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human must verify the authentication mechanisms, how developer credentials and API keys or OAuth apps are obtained, whether they are self-serve, and check for any MCP server documentation not covered in this snippet.",
+    "id": "80",
+    "status": "success",
+    "source_urls_used": [
+      "https://help.getharvest.com/api-v2/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Stripe",
+    "category": "Finance and Fintech",
+    "what_it_does": "Stripe provides a REST-based API platform for processing payments and managing financial infrastructure online.",
+    "auth_methods": [
+      "API key"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://docs.stripe.com/api",
+      "https://docs.stripe.com/keys-best-practices"
+    ],
+    "evidence_summary": [
+      "Stripe API documentation establishes that the API is organized around REST, uses API keys for authentication, and provides test mode sandboxes.",
+      "Stripe keys best practices documentation explains how secret API keys, restricted API keys, and test keys are managed and generated."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": "Stripe documentation does not explicitly detail the automated signup/developer account onboarding flow (e.g., whether immediate self-serve sandbox API key creation requires credit card or verification checks), though test mode keys are standard self-serve.",
+    "id": "81",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.stripe.com/api",
+      "https://docs.stripe.com/keys-best-practices"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Plaid",
+    "category": "Finance and Fintech",
+    "what_it_does": "Plaid is a financial technology platform that enables applications to connect with users' bank accounts, check balances, verify identities, and facilitate financial transactions.",
+    "auth_methods": [
+      "API key"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation mentions plugging in via the Plaid MCP Server.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://plaid.com/docs/",
+      "https://plaid.com/docs/api/"
+    ],
+    "evidence_summary": [
+      "The main docs page introduces Plaid's core concepts, features such as Auth, Balance, Identity, Transactions, and mentions the Plaid MCP Server.",
+      "The API docs page outlines API access requirements using a client_id and secret via the Plaid Dashboard, JSON over HTTP protocols, and OpenAPI definition files."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "82",
+    "status": "success",
+    "source_urls_used": [
+      "https://plaid.com/docs/",
+      "https://plaid.com/docs/api/"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Binance",
+    "category": "Finance and Fintech",
+    "what_it_does": "Access market data, trading, account, and real-time interfaces to build bots, backends, dashboards, and institutional integrations on Binance.",
+    "auth_methods": [
+      "API keys"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST+GraphQL",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation mentions Agent Native integration with AI agents using machine-readable docs, agent APIs, and MCP.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developers.binance.com/en/docs/",
+      "https://developers.binance.com/en/docs/products/spot/CHANGELOG"
+    ],
+    "evidence_summary": [
+      "Source 1 outlines Binance developer documentation, mentioning API endpoints, public endpoints requiring no keys, authenticated requests using API keys, SDKs, and Agent Native features including MCP.",
+      "Source 2 provides the changelog for Binance's API showing various REST, WebSocket, FIX, and SBE endpoints and updates."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "A human should check the exact self-serve developer signup and account creation/credential generation process, as the provided documentation mentions API keys and signing but does not explicitly detail the exact self-serve versus paid/approval onboarding steps.",
+    "id": "83",
+    "status": "success",
+    "source_urls_used": [
+      "https://developers.binance.com/en/docs/",
+      "https://developers.binance.com/en/docs/products/spot/CHANGELOG"
+    ],
+    "retrieval_methods": [
+      "playwright",
+      "playwright"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Paygent Connect",
+    "category": "Finance and Fintech",
+    "what_it_does": "Build and monetize payment solutions faster with components, APIs, SDKs, and integration guides designed to embed payments seamlessly.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "A hosted MCP server is provided to allow AI coding assistants (Claude Code, Cursor, VS Code) to query these docs directly.",
+    "buildability": "buildable-with-setup",
+    "main_blocker": "Access to the Merchant or Partner Portal is required to create API security keys.",
+    "evidence_urls": [
+      "https://docs.nmi.com/",
+      "https://docs.nmi.com/llms.txt"
+    ],
+    "evidence_summary": [
+      "Home page provides overview of developer tools, sandbox access, and documentation links for NMI.",
+      "llms.txt lists all documentation guides, references the NMI REST API, and notes a hosted MCP server for AI coding assistants."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The provided documentation describes NMI developer docs rather than Paygent Connect specifically, and lacks explicit details on authentication methods, exact credential acquisition paths, and API reference specifics.",
+    "id": "84",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.nmi.com/",
+      "https://docs.nmi.com/llms.txt"
+    ],
+    "retrieval_methods": [
+      "requests",
+      "requests"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": true,
+    "human_corrections": {
+      "auth_methods": [
+        "API key",
+        "OAuth2"
+      ],
+      "credential_path": "unknown",
+      "api_type": "REST",
+      "api_breadth": "broad",
+      "mcp_available": true,
+      "buildability": "buildable-with-setup",
+      "main_blocker": "Access to the Merchant or Partner Portal is required to create API security keys."
+    },
+    "human_notes": "The assignment identifies Paygent Connect as NMI-powered, so NMI's official developer documentation was used as the technical evidence source. NMI documents API/security-key authentication and OAuth 2.0 for its v5 signup API. Security keys are created from the Merchant Portal or Partner Portal. The documentation also exposes a hosted MCP server for its developer documentation. The evidence does not establish whether initial Merchant/Partner Portal access is self-serve, paid-plan-only, or approval-gated, so credential_path remains unknown.",
+    "verification_status": "human-verified"
+  },
+  {
+    "app": "iPayX",
+    "category": "Finance and Fintech",
+    "what_it_does": "The first FX audit platform built for modern distribution, giving teams a structured FX audit tool to find hidden bank fees, spreads, and markup on international payments.",
+    "auth_methods": [],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "Native Model Context Protocol server connecting via MCP SSE for Claude Desktop, Perplexity, n8n, or any MCP client.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://www.ipayx.ai/"
+    ],
+    "evidence_summary": [
+      "The homepage establishes that iPayX provides a forensic FX audit platform with MCP support, REST API + SDKs, free tier of five audits with usage-based pricing, and sandbox testing without required signup."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "Specific documentation for exact authentication methods (e.g., API key headers, OAuth scopes) was not detailed in the source text beyond mentioning API key generation.",
+    "id": "85",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.ipayx.ai/"
+    ],
+    "retrieval_methods": [
+      "playwright"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "QuickBooks",
+    "category": "Finance and Fintech",
+    "what_it_does": "QuickBooks provides financial and accounting APIs for managing accounting entities, payments, and desktop integrations.",
+    "auth_methods": [
+      "OAuth 2.0",
+      "OpenID Connect"
+    ],
+    "credential_path": "unknown",
+    "api_type": "REST+GraphQL",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities",
+      "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization"
+    ],
+    "evidence_summary": [
+      "Source 1 mentions QuickBooks Online Accounting API, Payments API, and Desktop API, but the main content page was not found.",
+      "Source 2 establishes that OAuth 2.0 and OpenID Connect are supported for authorization."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation is extremely limited and does not establish whether credentials are self-serve, what specific API breadth is offered, or whether an MCP integration exists.",
+    "id": "86",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/all-entities",
+      "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization"
+    ],
+    "retrieval_methods": [
+      "playwright",
+      "playwright"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Xero",
+    "category": "Finance and Fintech",
+    "what_it_does": "The Accounting API exposes accounting and related functions of the main Xero application and can be used for a variety of purposes such as creating transactions like invoices and credit notes, right through to extracting accounting data via our reports endpoint.",
+    "auth_methods": [
+      "OAuth 2.0",
+      "Client credentials"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://developer.xero.com/documentation/api/accounting/overview",
+      "https://developer.xero.com/documentation/guides/oauth2/overview/"
+    ],
+    "evidence_summary": [
+      "Established that Xero provides an extensive Accounting API along with multiple other APIs for assets, bank feeds, and projects.",
+      "Established that Xero supports OAuth 2.0 authorization code flow, PKCE flow, and Custom Connections using client credentials, with free options available for standard flows."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "87",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.xero.com/documentation/api/accounting/overview",
+      "https://developer.xero.com/documentation/guides/oauth2/overview/"
+    ],
+    "retrieval_methods": [
+      "playwright",
+      "playwright"
+    ],
+    "pages_found": 2,
+    "quality_status": "review",
+    "quality_issues": [
+      "MCP availability was not established as true; manual verification may be required."
+    ],
+    "quality_score": 90,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Brex",
+    "category": "Finance and Fintech",
+    "what_it_does": "Brex is a fully unified spend platform offering global corporate cards, expense management, reimbursements, travel, and bill pay.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation lists 'Brex MCP' in the navigation menu.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://developer.brex.com/"
+    ],
+    "evidence_summary": [
+      "The Brex developer overview page details the platform's features, APIs including Accounting, Budgets, Expenses, Fields, Onboarding, Payments, Team, Transactions, Travel, and Webhooks, and references a Brex MCP option."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation text does not specify exact authentication methods, credential generation or pricing paths (self-serve vs paid plan), or operational details for the referenced MCP option.",
+    "id": "88",
+    "status": "success",
+    "source_urls_used": [
+      "https://developer.brex.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Ramp",
+    "category": "Finance and Fintech",
+    "what_it_does": "Ramp provides financial operations and corporate card management software with developer tools and API documentation.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://docs.ramp.com/"
+    ],
+    "evidence_summary": [
+      "The source page indicates that the root HTML is a shell and provides instructions for accessing machine-readable endpoints such as llms.txt, llms-api.txt, and the OpenAPI spec, but actual content from those endpoints was not provided in the source text."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied source text only contained placeholder instructions pointing to machine-readable endpoints (/llms.txt, /openapi/developer-api.json, etc.) and did not provide the actual documentation content needed to determine authentication methods, credential paths, API breadth, or MCP availability.",
+    "id": "89",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.ramp.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 50,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "PitchBook",
+    "category": "Finance and Fintech",
+    "what_it_does": "Provides comprehensive market intelligence, data, and technology for private capital markets including venture capital and private equity.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "No-public-API-found",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "blocked",
+    "main_blocker": "no public API",
+    "evidence_urls": [
+      "https://pitchbook.com/"
+    ],
+    "evidence_summary": [
+      "The homepage documents general platform offerings, use cases, product suites, and contact/trial request paths, but contains no public API documentation, authentication details, or developer portal references."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation is limited to marketing and platform overview pages; a human should verify if a hidden or enterprise-only developer API exists.",
+    "id": "90",
+    "status": "success",
+    "source_urls_used": [
+      "https://pitchbook.com/"
+    ],
+    "retrieval_methods": [
+      "playwright"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Confidence is high despite having fewer than two evidence pages.",
+      "Confidence is high despite missing authentication evidence.",
+      "Confidence is high despite an unknown credential path."
+    ],
+    "quality_score": 30,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "NotebookLM",
+    "category": "AI, Research and Media-native",
+    "what_it_does": "Google's ecosystem of products and models can help developers and businesses get the most out of Google AI, from building with Gemini models to using Gemini across every employee in your organization.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Unknown",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://cloud.google.com/ai/gemini"
+    ],
+    "evidence_summary": [
+      "The provided documentation covers general Google Cloud AI and Gemini information, but does not contain any specific details regarding NotebookLM, its API, authentication, or MCP availability."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "Supplied documentation is for Google Cloud AI/Gemini in general and does not mention NotebookLM specifics, authentication methods, credential paths, or API capabilities.",
+    "id": "91",
+    "status": "success",
+    "source_urls_used": [
+      "https://cloud.google.com/ai/gemini"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Public API type is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 40,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Otter AI",
+    "category": "AI, Research and Media-native",
+    "what_it_does": "Otter.ai is an AI-powered assistant that records meetings, takes notes, generates transcripts, and provides chat features for conversations.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Unknown",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://help.otter.ai/hc/en-us"
+    ],
+    "evidence_summary": [
+      "The Otter Help Center lists general user guides, integration articles for Zapier, Salesforce, Slack, and HubSpot, but does not provide developer API documentation, authentication details, or public API endpoints."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "The supplied help center documentation lacks any information regarding public APIs, developer credential paths, authentication mechanisms, or Model Context Protocol (MCP) support. A human must check if Otter.ai provides a public developer platform outside of standard end-user integrations like Zapier.",
+    "id": "92",
+    "status": "success",
+    "source_urls_used": [
+      "https://help.otter.ai/hc/en-us"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Public API type is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 40,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Fathom",
+    "category": "AI, Research and Media-native",
+    "what_it_does": "Fathom summarizes your meetings so you can focus on the conversation, providing transcripts, action items, and integrations.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Other",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "The homepage navigation and footer explicitly list 'Public API & MCP' under integrations.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://www.fathom.ai/"
+    ],
+    "evidence_summary": [
+      "The Fathom homepage mentions a Public API & MCP under its integrations menu, but lacks detailed technical documentation or endpoint references in the supplied text."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human must check the Developer Hub to confirm specific authentication mechanisms, exact credential paths, and the exact capabilities of the public API and MCP integration.",
+    "id": "93",
+    "status": "success",
+    "source_urls_used": [
+      "https://www.fathom.ai/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Consensus",
+    "category": "AI, Research and Media-native",
+    "what_it_does": "Consensus is an AI-powered academic search engine that allows users to search and analyze peer-reviewed research papers.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "No-public-API-found",
+    "api_breadth": "unknown",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "blocked",
+    "main_blocker": "no public API",
+    "evidence_urls": [
+      "https://consensus.app/"
+    ],
+    "evidence_summary": [
+      "The source text describes Consensus as a web-based AI academic search engine for peer-reviewed research papers and contains no documentation regarding public APIs, authentication mechanisms, developer credentials, or Model Context Protocol (MCP)."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": "A human should verify whether Consensus offers a hidden or private developer API, as the provided marketing landing page does not contain developer documentation.",
+    "id": "94",
+    "status": "success",
+    "source_urls_used": [
+      "https://consensus.app/"
+    ],
+    "retrieval_methods": [
+      "playwright"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "MCP availability was not established as true; manual verification may be required.",
+      "Confidence is high despite having fewer than two evidence pages.",
+      "Confidence is high despite missing authentication evidence.",
+      "Confidence is high despite an unknown credential path."
+    ],
+    "quality_score": 30,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Reducto",
+    "category": "AI, Research and Media-native",
+    "what_it_does": "Reducto is the agentic document platform providing production-grade document processing, classification, extraction, editing, and workflow orchestration for AI teams.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "REST",
+    "api_breadth": "broad",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation explicitly lists 'Reducto MCP Server' and states: 'Give agents Reducto tools directly in Claude Code, Codex, Cursor, and other MCP clients.'",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://docs.reducto.ai/overview"
+    ],
+    "evidence_summary": [
+      "Establishes Reducto's core capabilities (classification, parsing, extraction, splitting, editing, pipelines), available SDKs (Python, Node.js, Go, REST), CLI, and MCP server availability."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "The supplied documentation index mentions API endpoints, SDKs, and an MCP server, but does not detail the specific authentication mechanisms or developer credential path (self-serve vs. paid plan requirement).",
+    "id": "95",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.reducto.ai/overview"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Devin",
+    "category": "AI, Research and Media-native",
+    "what_it_does": "Devin is an autonomous AI software engineer that can write, run, and test code to help engineering teams crush their backlogs.",
+    "auth_methods": [],
+    "credential_path": "unknown",
+    "api_type": "Other",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation index references 'MCP (Model Context Protocol)' and 'Devin MCP'.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://docs.devin.ai/get-started/devin-intro"
+    ],
+    "evidence_summary": [
+      "The documentation index mentions the existence of an API and MCP support, but lacks detailed API reference specifications or authentication method documentation."
+    ],
+    "confidence": "low",
+    "needs_human_verification": true,
+    "verification_note": "A human needs to verify specific authentication mechanisms, API reference documentation, and the exact credential path since the provided introductory text only mentions the existence of the Devin API and MCP without detailing technical specs.",
+    "id": "96",
+    "status": "success",
+    "source_urls_used": [
+      "https://docs.devin.ai/get-started/devin-intro"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Authentication methods were not established from the evidence.",
+      "Credential acquisition path is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 60,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "higgsfield",
+    "category": "AI, Research and Media-native",
+    "what_it_does": "Higgsfield provides an AI image and video generation platform and CLI/MCP integration that allows AI agents to create images and videos directly from prompts.",
+    "auth_methods": [
+      "Browser-based sign-in"
+    ],
+    "credential_path": "unknown",
+    "api_type": "CLI",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "Higgsfield documents an MCP (Model Context Protocol) server connection that gives AI agents access to external tools for generating images and videos.",
+    "buildability": "buildable-with-setup",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://higgsfield.ai/cli"
+    ],
+    "evidence_summary": [
+      "The source page details CLI installation steps, browser authentication via `higgsfield auth login`, and setup for MCP-compatible AI agents like Claude Code, OpenClaw, and Hermes Agent."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "While CLI and MCP setup instructions are provided, the developer credential path (whether pricing tiers require a paid plan or offer a self-serve trial/free tier) is not explicitly detailed in the supplied text.",
+    "id": "97",
+    "status": "success",
+    "source_urls_used": [
+      "https://higgsfield.ai/cli"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Credential acquisition path is unknown."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Mermaid CLI",
+    "category": "AI, Research and Media-native",
+    "what_it_does": "Mermaid CLI is a command-line tool for the Mermaid diagramming library that converts Mermaid definitions into rendered diagram files.",
+    "auth_methods": [],
+    "credential_path": "self-serve-free",
+    "api_type": "CLI",
+    "api_breadth": "narrow",
+    "mcp_available": false,
+    "mcp_evidence": null,
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://github.com/mermaid-js/mermaid-cli"
+    ],
+    "evidence_summary": [
+      "The official repository describes Mermaid CLI as a command-line tool for the Mermaid library.",
+      "The project accepts Mermaid definitions as input and generates SVG, PNG, and PDF outputs."
+    ],
+    "confidence": "high",
+    "needs_human_verification": false,
+    "verification_note": null,
+    "id": "98",
+    "status": "success",
+    "source_urls_used": [
+      "https://github.com/mermaid-js/mermaid-cli"
+    ],
+    "retrieval_methods": [
+      "web-verified"
+    ],
+    "pages_found": 1,
+    "quality_status": "pass",
+    "quality_issues": [],
+    "quality_score": 100,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "YouTube Transcript",
+    "category": "AI, Research and Media-native",
+    "what_it_does": "Extracts YouTube transcripts, searches videos, browses channels, and extracts playlists via REST API or MCP.",
+    "auth_methods": [
+      "Bearer token"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "REST",
+    "api_breadth": "moderate",
+    "mcp_available": true,
+    "mcp_evidence": "The documentation explicitly mentions 'YouTube MCP' with setup instructions for Claude Code, Cursor, VS Code, and universal JSON config pointing to https://transcriptapi.com/mcp.",
+    "buildability": "agent-ready",
+    "main_blocker": null,
+    "evidence_urls": [
+      "https://transcriptapi.com/"
+    ],
+    "evidence_summary": [
+      "Establishes API capabilities, REST endpoints, Bearer token authentication, self-serve free tier with 100 free credits, and official YouTube MCP support."
+    ],
+    "confidence": "high",
+    "needs_human_verification": true,
+    "verification_note": null,
+    "id": "99",
+    "status": "success",
+    "source_urls_used": [
+      "https://transcriptapi.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Confidence is high despite having fewer than two evidence pages."
+    ],
+    "quality_score": 80,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  },
+  {
+    "app": "Grain",
+    "category": "AI, Research and Media-native",
+    "what_it_does": "Grain captures and enriches your meetings, then delivers them to AI tools so your agents can do the work.",
+    "auth_methods": [
+      "Google",
+      "Microsoft",
+      "SSO"
+    ],
+    "credential_path": "self-serve-free",
+    "api_type": "Unknown",
+    "api_breadth": "unknown",
+    "mcp_available": true,
+    "mcp_evidence": "The homepage explicitly mentions 'MCP Server & API' allowing AI agents to query transcripts, search across meetings, and access full meeting history.",
+    "buildability": "uncertain",
+    "main_blocker": "unclear API authentication",
+    "evidence_urls": [
+      "https://grain.com/"
+    ],
+    "evidence_summary": [
+      "The Grain homepage establishes that Grain is an AI notetaker offering bot-less transcription, a free forever tier, Google/Microsoft/SSO authentication, an MCP server and API, and integrations with external tools like Claude, ChatGPT, and Slack."
+    ],
+    "confidence": "medium",
+    "needs_human_verification": true,
+    "verification_note": "A human needs to check the dedicated developer documentation or API reference to confirm specific API endpoint types, request formats, and how to obtain developer API keys or authenticate against the API/MCP server.",
+    "id": "100",
+    "status": "success",
+    "source_urls_used": [
+      "https://grain.com/"
+    ],
+    "retrieval_methods": [
+      "requests"
+    ],
+    "pages_found": 1,
+    "quality_status": "review",
+    "quality_issues": [
+      "Only one source page was retrieved; cross-check recommended.",
+      "Public API type is unknown.",
+      "Buildability could not be determined confidently."
+    ],
+    "quality_score": 70,
+    "human_verified": false,
+    "human_corrections": {},
+    "human_notes": "",
+    "verification_status": "agent-only"
+  }
+]
