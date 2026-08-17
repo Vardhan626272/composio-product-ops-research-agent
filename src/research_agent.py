@@ -1,3 +1,11 @@
+"""
+Legacy single-app smoke test.
+
+The production 100-app research pipeline is:
+    src/batch_research.py
+
+This file is retained only as a small Gemini/web-search smoke test.
+"""
 import os
 from dotenv import load_dotenv
 from google import genai
