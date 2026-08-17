@@ -90,30 +90,48 @@ The pipeline intentionally exposes uncertainty instead of presenting unverified 
 
 ## Pipeline
 
-```text
-100-app input
-     |
-     v
-Research agent
-     |
-     +--> URL / source discovery
-     |
-     +--> Web research
-     |
-     +--> Evidence extraction
-     |
-     v
-Candidate results
-     |
-     v
-Validation + quality gates
-     |
-     v
-Verification / human review
-     |
-     v
-Final results
-     |
-     +--> Pattern analysis
-     |
-     +--> HTML case study
+    100-app input
+         |
+         v
+    Research agent
+         |
+         +--> URL / source discovery
+         |
+         +--> Web research
+         |
+         +--> Evidence extraction
+         |
+         v
+    Candidate results
+         |
+         v
+    Validation + quality gates
+         |
+         v
+    Verification / human review
+         |
+         v
+    Final results
+         |
+         +--> Pattern analysis
+         |
+         +--> HTML case study
+
+---
+
+## How to Run the Agent
+
+**1. Install Dependencies**
+Ensure you have Python installed, then run the following commands in your terminal:
+pip install -r requirements.txt
+playwright install chromium
+
+**2. Configure Environment**
+Create a .env file in the root directory and add your Google API key:
+GOOGLE_API_KEY=your_gemini_api_key
+
+(Note: The Composio SDK Browser tool was tested but bypassed in the final pipeline due to a 403 sandbox error, so a COMPOSIO_API_KEY is not strictly required to run the local Playwright fallback).
+
+**3. Execute the Pipeline**
+Run the core orchestrator to process the apps, extract evidence, and generate the final output:
+python src/batch_research.py
